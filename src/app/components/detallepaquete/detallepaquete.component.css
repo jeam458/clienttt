@@ -1,0 +1,213 @@
+.feature-box {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 30px;
+    margin: 80px 0 60px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.feature-box .desc {
+    font-size: .9em;
+    text-align: center;
+}
+
+.feature-box .desc h1,
+.feature-box .desc h2,
+.feature-box .desc h3,
+.feature-box .desc h4,
+.feature-box .desc h5 {
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.feature-box [class$='-icon'],
+.feature-box .fa {
+    position: relative;
+    float: none;
+    margin: -60px auto 30px;
+}
+
+.slick-slider {
+    width: 90%;
+    margin: auto;
+    background: #000;
+}
+
+.nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 100px !important;
+}
+
+.prev-slide.slick-disabled,
+.next-slide.slick-disabled {
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+.prev-slide {
+    background: url(../../../assets/img/left-chevron.png) no-repeat scroll 0 0;
+    left: -33px;
+}
+
+.next-slide {
+    background: url(../../../assets/img/right-arrow.png) no-repeat scroll -24px 0px;
+    right: -33px;
+}
+
+.prev-slide:hover {
+    background-position: 0px -53px;
+}
+
+.next-slide:hover {
+    background-position: -24px -53px;
+}
+
+
+
+
+
+
+/*ubicacion del indicar*/
+  
+  .middle-indicator{
+     position:absolute;
+     top:50%;
+     }
+/*tamano de carousel*/
+.carousel1 {
+    top:25px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 323px;
+    -webkit-perspective: 500px;
+            perspective: 500px;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+            border-radius: 8px;
+  }
+  
+
+
+.bannerStyle {
+    background-color: #ccc;
+    background-size: cover !important;
+    height: 100%;
+}
+
+.bannerStyle img {
+    width: 100%;
+    height: 100%;
+}
+
+.bannerStyle h1 {
+    text-align: center;
+    line-height: 400px;
+    background: rgba(0, 0, 0, 0.32);
+    color: white;
+    margin: 0;
+}
+
+.tile {
+    min-height: 200px;
+    background-color: #ccc;
+    background-size: cover !important;
+}
+
+.tile h1 {
+    text-align: center;
+    line-height: 200px;
+    background: rgba(0, 0, 0, 0.32);
+    color: white;
+    margin: 0;
+}
+
+h4 {
+    margin: 0;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+    padding: 0 15px 10px;
+    text-align: center;
+}
+
+.wBg {
+    background: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav {
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: white;
+    z-index: 12;
+}
+
+nav h1 {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.carBtn {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
+    border-radius: 999px;
+}
+
+.leftRs {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
+    border-radius: 999px;
+    left: 0;
+}
+
+.rightRs {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, .3);
+    border-radius: 999px;
+    right: 0;
+}
+
+
+
+
+
+
+  
+
+  
+
+

@@ -1,0 +1,141 @@
+/*---------- 2.9  Counter Number Banner ----------*/
+
+.counter-div{
+	text-align: center;
+	color: @primary-color;
+	[class^='col-']{
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	p{
+		letter-spacing: 1px;
+		font-weight: none;
+	}
+	.icon-font{
+		font-size: 4em;
+		display: block;
+		color: @primary-color;
+	}
+	.counter{
+		font-size: 4em;
+		font-weight: bold;
+		font-family: @head-font;
+		text-align: center;
+	}
+
+
+	/*variations*/
+	&.white{
+		background: #fff;
+		color: @gray-900;
+		.icon-font{
+			color: @primary-500;
+		}
+		.counter{
+			color: @gray-900;
+		}
+	}
+	&.base{
+		background: @base-color;
+		color: fade(@base-contrast, 80%);
+		.icon-font{
+			color: @primary-500;
+		}
+		.counter{
+			color:  @base-contrast;
+		}
+	}
+	&.primary{
+		background: @primary-color;
+		color: @primary-900;
+		.icon-font{
+			color: @primary-900;
+		}
+		.counter{
+			color:  #fff;
+		}
+	}
+	&.gray{
+		background: @gray-50;
+		color: @gray-700;
+		.icon-font{
+			color: @primary-500;
+		}
+		.counter{
+			color:  @gray-900;
+		}
+	}
+
+	&.boxed{
+		[class^='col-']{
+			&:nth-child(odd){
+				background: rgba(0,0,0,.1);
+			}
+			&:nth-child(even){
+				background: rgba(0,0,0,.03);
+			}
+		}
+	}
+	&.base.boxed{
+		[class^='col-']{
+			&:nth-child(odd){
+				background: rgba(255,255,255,.1);
+			}
+			&:nth-child(even){
+				background: rgba(255,255,255,.05);
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: @screen-md){
+	.counter-div{
+		font-size: .8em;
+		&.boxed{
+			margin-top: 0;
+			[class^='col-']{
+				&:nth-child(1){
+					background: rgba(0,0,0,0);
+				}
+				&:nth-child(2){
+					background: rgba(0,0,0,.03);
+				}
+				&:nth-child(3){
+					background: rgba(0,0,0,.06);
+				}
+				&:nth-child(4){
+					background: rgba(0,0,0,.09);
+				}
+				&:nth-child(5){
+					background: rgba(0,0,0,.12);
+				}
+				&:nth-child(6){
+					background: rgba(0,0,0,.15);
+				}
+			}
+		}
+		&.base.boxed{
+			[class^='col-']{
+				&:nth-child(1){
+					background: rgba(255,255,255,0);
+				}
+				&:nth-child(2){
+					background: rgba(255,255,255,.03);
+				}
+				&:nth-child(3){
+					background: rgba(255,255,255,.06);
+				}
+				&:nth-child(4){
+					background: rgba(255,255,255,.09);
+				}
+				&:nth-child(5){
+					background: rgba(255,255,255,.12);
+				}
+				&:nth-child(6){
+					background: rgba(255,255,255,.15);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,61 @@
+/*---------- 2.26 Reviews ----------*/
+
+/*Star Rating*/
+.rating{
+  color: #ffcc00;
+  font-size: 16px;
+  line-height: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.review-comment{
+  margin-top: 30px;
+  li{
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px dashed @gray-50;
+    .media{
+      margin-top: 40px;
+    }
+    &:last-child{
+      border-bottom: none;
+      margin-bottom: 0
+    }
+  }
+  .media-left{
+    @height: 70px;
+    padding-right: 30px;
+    .media-object{
+      height: @height;
+      width: @height;
+      // mixin defied on mixins/_mixins.less
+      .border-radius(@height);
+    }
+  }
+  .media-heading{
+    margin-bottom: 0;
+  }
+}
+.add-comment{
+  .form-control{
+    margin-bottom: 15px;
+  }
+}
+
+@media(max-width: @screen-media-sm){
+  .media{
+    .media-object{
+      @height: 50px;
+      height: @height !important;
+      width: @height !important;
+    }
+    .media-body{
+      overflow: visible;
+    }
+    .media{
+      margin-left: -40px;
+
+    }
+  }
+}

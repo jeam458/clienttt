@@ -1,0 +1,29 @@
+/*---------- 2.16 Tabs ----------*/
+
+.nav-tabs{
+	& > li{
+		& > a{
+			padding: 15px 25px;
+		}
+		&.active{
+			& > a, 
+			& > a:hover, 
+			& > a:focus{
+				background: #fff;
+			}
+		}
+	}
+
+}
+
+.tab-content{
+	background: #fff;
+	padding: 30px 15px;
+	border: 1px solid @gray-100;
+	border-top: 0;
+}
+
+
+
+@media screen and (max-width: @screen-media-sm) {
+}

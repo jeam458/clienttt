@@ -1,0 +1,210 @@
+/*---------- 2.23 Feature List ----------*/
+
+.circle-icon{
+	@height: 70px;
+	height: @height;
+	width: @height;
+	border-radius: @height;
+	@border-size: 4px;
+	display: block;
+	float: left;
+	text-align: center;
+	background: @primary-color;
+	[class^='icon-'], .fa, .glyphicon {
+		display: block;
+		line-height: @height;
+		vertical-align: middle;
+		font-size: 35px;
+		color: #fff;
+	}
+	&.border{
+		border: @border-size double #fff;
+		[class^='icon-'], .fa, .glyphicon {
+			line-height: @height - @border-size*2;
+		}
+	}
+	&.line{
+		border: (@border-size - 1px) solid @primary-color;
+		background: transparent;
+		[class^='icon-'], .fa, .glyphicon {
+			color: @primary-color;
+		}
+	}
+}
+
+.square-icon{
+	@height: 60px;
+	@border-size: 4px;
+	height: @height;
+	line-height: @height;
+	width: @height;		
+	margin-top: 8px;	
+	border-radius: 5px;
+	display: block;
+	float: left;
+	text-align: center;
+	background: @primary-color;
+	[class^='icon-'], .fa, .glyphicon {
+		display: block;
+		line-height: @height;
+		font-size: 35px;
+		color: #fff;
+		vertical-align: middle;
+	}
+	&.border{
+		border: @border-size double #fff;
+		[class^='icon-'], .fa, .glyphicon {
+			line-height: @height - @border-size*2;
+		}
+	}
+	&.line{
+		border: (@border-size - 1px) solid @primary-color;
+		background: transparent;
+		[class^='icon-'], .fa, .glyphicon {
+			color: @primary-color;
+		}
+	}
+}
+
+.diamond-icon{
+	@height: 60px;
+	@border-size: 4px;
+	height: @height;
+	line-height: @height;
+	width: @height;			
+	border-radius: 5px;
+	display: block;
+	float: left;
+	margin-top: 20px;
+	margin-left: 15px;
+	text-align: center;
+	background: @primary-color;
+	.transform(rotate(45deg));
+	[class^='icon-'], .fa, .glyphicon {
+		display: block;
+		line-height: @height;
+		font-size: 35px;
+		color: #fff;
+		vertical-align: middle;
+		.transform(rotate(-45deg));
+	}
+	&.border{
+		border: @border-size double #fff;
+		[class^='icon-'], .fa, .glyphicon {
+			line-height: @height - @border-size*2;
+		}
+	}
+	&.line{
+		border: (@border-size - 1px) solid @primary-color;
+		background: transparent;
+		[class^='icon-'], .fa, .glyphicon {
+			color: @primary-color;
+			line-height: @height - @border-size*2;
+		}
+	}
+}
+
+.chat-icon{
+	@height: 60px;
+	@border-size: 4px;
+	@arrow-height: 10px;
+	height: @height;
+	line-height: @height;
+	width: @height + @height*.2;			
+	border-radius: 5px;
+	display: block;
+	float: left;
+	text-align: center;
+	background: @primary-color;
+	position: relative;
+	&:before{
+		content: '';
+		height: 0;
+		width: 0;
+		border-right: @arrow-height solid transparent;
+		border-left: @arrow-height solid transparent;
+		border-top: @arrow-height solid @primary-color;
+		position: absolute;
+		bottom: -@arrow-height;
+		left: (@height + @height*.2)/2 - @arrow-height;
+	}
+	[class^='icon-'], .fa, .glyphicon {
+		display: block;
+		font-size: 35px;
+		color: #fff;
+		vertical-align: middle;
+	}
+	&.border{
+		&:before{
+			left: (@height + @height*.2)/2 - @arrow-height - @border-size;;
+		}
+		border: @border-size double #fff;
+		[class^='icon-'], .fa, .glyphicon {
+			line-height: @height - @border-size*2;
+		}
+	}
+	&.line{
+		&:before{
+			left: (@height + @height*.2)/2 - @arrow-height - @border-size;;
+		}
+		border: (@border-size - 1px) solid @primary-color;
+		background: transparent;
+		[class^='icon-'], .fa, .glyphicon {
+			color: @primary-color;
+			line-height: @height - @border-size*2;
+		}
+	}
+}
+
+
+.feature-list{
+	@height: 80px;
+	overflow: hidden;
+	margin-bottom: -30px;
+	.desc{
+		margin-left: @height+15;
+		margin-bottom: 40px;
+		min-height: @height;
+		h1,h2,h3,h4,h5{
+			font-family: @head-font;
+			position: relative;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+	}
+	&.center{
+		[class$='-icon'], .line, .fa{
+			float: none;
+			margin: 30px auto;
+		}
+		.desc{
+			margin-left: 0;
+			text-align: center;
+		}
+	}
+}
+
+
+.feature-box{
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background: #fff;
+	padding: 30px;
+	margin: 80px 0 60px;
+	position: relative;
+	border-radius: 5px;
+	.desc{
+		font-size: .9em;
+		text-align: center;
+		h1,h2,h3,h4,h5{
+			font-family: @head-font;
+			position: relative;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+	}
+	[class$='-icon'], .fa{
+		position: relative;
+		float: none;
+		margin: -60px auto 30px;
+	}
+}

@@ -1,0 +1,111 @@
+
+
+
+/*---------- 2.33 Footer ----------*/
+
+#footer {
+    padding-top: 60px;
+    background: #111111;
+    color: rgba(221, 221, 221, 0.6);
+    line-height: 1.6;
+    font-size: .9em;
+}
+
+#footer h1,
+#footer h2,
+#footer h3,
+#footer h4,
+#footer h5,
+#footer h6 {
+    color: #a7a7a7;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#footer h1:after,
+#footer h2:after,
+#footer h3:after,
+#footer h4:after,
+#footer h5:after,
+#footer h6:after {
+    content: '';
+    height: 2px;
+    width: 30px;
+    background: #558B2F;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+#footer a {
+    color: rgba(221, 221, 221, 0.6);
+}
+
+#footer a:hover {
+    color: #ffffff;
+}
+
+#footer p {
+    margin-top: 15px;
+}
+
+#footer ul {
+    margin: 15px 0px 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+#footer ul li {
+    margin-bottom: 2px;
+}
+
+#footer .social-icon-list {
+    margin: 0;
+}
+
+#footer .social-icon-list ul {
+    margin-top: 5px;
+}
+
+#footer .social-icon-list a {
+    color: #fff;
+}
+
+#footer .copy {
+    margin-top: 60px;
+    padding: 10px;
+    background: rgba(221, 221, 221, 0.04);
+    color: rgba(221, 221, 221, 0.3);
+    font-size: .9em;
+    text-align: center;
+}
+
+#footer .copy span {
+    font-size: 1.6em;
+    position: relative;
+    top: 2px;
+}
+
+@media screen and (max-width: 767px) {
+    #footer {
+        padding-top: 10px;
+        text-align: center;
+    }
+    #footer h1:after,
+    #footer h2:after,
+    #footer h3:after,
+    #footer h4:after,
+    #footer h5:after,
+    #footer h6:after {
+        left: 50%;
+        margin-left: -15px;
+        bottom: -15px;
+    }
+    #footer .row>div {
+        display: block;
+        padding: 10px 30px;
+    }
+    #footer .social-icon {
+        margin: 10px auto 0;
+    }
+}

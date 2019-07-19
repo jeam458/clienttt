@@ -1,0 +1,192 @@
+<h1 mat-dialog-title>Integrantes para el grupo {{data.grupo.Nombre}}</h1>
+<div mat-dialog-content >
+    <p>desea agregar un integrante?</p>
+    <mat-form-field>
+        <input matInput type="number" [(ngModel)]="pasajeros" (ngModelChange)="modificarpasajeros(pasajeros)" min="1" max="{{maximopasajero}}">
+    </mat-form-field>
+    <div *ngIf="!pasarcheck">
+        <div *ngFor="let integrante of data.grupo.Integrantes" >
+            <div class="card" *ngIf="mostrarintegrantes(integrante)">
+                <div class="card-header card-header-icon" data-background-color="green">
+                    <i class="material-icons">assignment_ind</i>
+                </div>
+                <div class="card-content">
+                    <h4 class="card-title">Integrante {{integrante.nro}}</h4>
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="input-group">
+                                    <div class="form-group label-floating ">
+                                        <label class="control-label">Nombre</label>
+                                        <input [(ngModel)]="integrante.Nombre" name="Nombre{{integrante.nro}}" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="input-group">
+                                    <div class="form-group label-floating ">
+                                        <label class="control-label">Apellido Paterno</label>
+                                        <input [(ngModel)]="integrante.AP" name="AP{{integrante.nro}}" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="input-group">
+                                    <div class="form-group label-floating ">
+                                        <label class="control-label">Apellido Materno</label>
+                                        <input [(ngModel)]="integrante.AM" name="AM{{integrante.nro}}" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="input-group">
+                                    <div class="form-group label-floating ">
+                                        <label class="control-label">Nacionalidad</label>
+                                        <select name="Nacionalidad{{integrante.nro}}" id="" class="form-control" [(ngModel)]="integrante.Nacionalidad">
+                                            <option [value]="pais.id" *ngFor="let pais of select_pais.availableOptions">
+                                                {{pais.name}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="input-group">
+                                    <div class="form-group label-floating ">
+                                        <label class="control-label">Sexo</label>
+                                        <select name="Sexo{{integrante.nro}}" id="" class="form-control" [(ngModel)]="integrante.Sexo">
+                                            <option [value]="sexo.id" *ngFor="let sexo of select_sexo.availableOptions">
+                                               {{sexo.name}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="input-group">
+                                    <div class="form-group label-floating ">
+                                        <label class="control-label">Edad</label>
+                                        <input [(ngModel)]="integrante.Edad" name="Edad{{integrante.nro}}" type="number" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="input-group">
+                                    <div class="form-group label-floating ">
+                                        <label class="control-label">Tipo Documento</label>
+                                        <select name="TipoDocumento{{integrante.nro}}" id="" class="form-control" [(ngModel)]="integrante.TipoDocumento">
+                                                  <option [value]="tipo.id" *ngFor="let tipo of tipo_documento.availableOptions">
+                                                   {{tipo.name}}
+                                                  </option>           
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="input-group">
+                                    <div class="form-group label-floating ">
+                                        <label class="control-label">Documento</label>
+                                        <input [(ngModel)]="integrante.Dni" name="Dni{{integrante.nro}}" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="input-group">
+                                    <div class="form-group label-floating ">
+                                        <label class="control-label">Correo</label>
+                                        <input [(ngModel)]="integrante.Correo" name="Correo{{integrante.nro}}" type="email" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="input-group">
+                                    <div class="form-group label-floating ">
+                                        <label class="control-label">Teléfono</label>
+                                        <input [(ngModel)]="integrante.Celular" name="Celular{{integrante.nro}}" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="col-sm-12 col-md-3 col-lg-3">
+                                <div class="input-group">
+                                    <div class="checkbox">
+                                        <label>
+                                                <input type="checkbox" name="optionsCheckboxes{{integrante.nro}}" value="true" (change)="checkpago($event, integrante)"> Pago
+                                                </label>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" *ngIf="pasarcheck">
+            <div class="card-header card-header-icon" data-background-color="green">
+                <i class="material-icons">assignment</i>
+            </div>
+            <div class="card-content">
+                <h4 class="card-title">revisar detalles de pago</h4>
+                <h5 class="card-title">Seleccione integrantes de los cuales realizará el pago</h5>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                  <th class="text-center">Nacionalidad</th>
+                                  <th>Documento</th>
+                                  <th>Nombre</th>
+                                  <th>Edad</th>
+                                  <th>Correo</th>
+                                  <th class="text-right">Monto</th>
+                                  <th class="text-right">Pagar</th>
+                                </tr>
+                            </thead>
+                          <tbody *ngFor="let integrante of data.grupo.Integrantes">
+                              <tr  *ngIf="mostrarintegrantes(integrante)" >
+                                         <td class="text-center">
+                                                <img class="avatar" style="width: 16px;height: 16px;display: inline-block" src="https://www.countryflags.io/{{integrante.Nacionalidad}}/flat/16.png">
+                                          </td>
+                                          <td>
+                                              {{integrante.Dni}}
+                                          </td>
+                                          <td>
+                                              {{integrante.Nombre}} {{integrante.AP}} {{integrante.AM}}
+                                          </td>
+                                          <td>{{integrante.Edad}}</td>
+                                          <td>{{integrante.Correo}}</td>
+                                          <td class="text-right">{{integrante.TotalPago}}</td>
+                                          <td class="right">
+                                                <div class="checkbox" >
+                                                        <label>
+                                                            <input type="checkbox" name="optionsCheckboxes1{{integrante.nro}}" (change)="checkpago($event, integrante)">
+                                                        </label>
+                                                </div>         
+                                          </td>
+                                          
+                                          <!--<td class="text-right">{{ row.price | currency:'EUR':true:'1.2-2'}}</td>-->
+                              </tr>
+                          </tbody>
+                          <tbody>
+                                <tr>
+                                        <td colspan="5"></td>
+                                        <td class="td-total">
+                                            Total
+                                        </td>
+                                        <td class="td-price">
+                                            <small>$</small> {{data.grupo.TotalPago}} 
+                                        </td>
+                                    </tr>
+                          </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" class="btn btn-danger">cancelar</button>
+    <button mat-button class="btn btn-success" *ngIf="!pasarcheck" (click)="cambiarAdelante()" cdkFocusInitial>adelante</button>
+    <button mat-button class="btn btn-success green " *ngIf="pasarcheck" (click)="cambiarAtras()" cdkFocusInitial>atras</button>
+    <button mat-button class="btn btn-primary green left" *ngIf="pasarcheck" (click)="ActualizarGrupo()" cdkFocusInitial>reservar</button>
+</div>

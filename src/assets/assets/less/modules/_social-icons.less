@@ -1,0 +1,54 @@
+/*---------- 2.20 Social Media Icons ----------*/
+
+.social{
+	margin-bottom: 15px;
+	.icon{
+		@height: 36px;
+		height: @height;
+		line-height: @height;
+		width: @height;
+		border-radius: @height;
+		display: inline-block;
+		background: @primary-color;
+		color: #fff;
+		text-align: center;
+		font-size: 18px;
+		margin-right: 10px;
+		&:hover,
+		&:focus{
+			text-decoration: none;
+			background: @primary-hover;
+		}
+	}
+}
+
+.social-icon-list{
+	list-style: none;
+	margin: 0px;
+	padding: 0;
+	position: relative;
+	li{
+		display: inline-block;
+		margin: 0 5px; 
+		&:first-child{
+			margin-left: 0;
+		}
+		a{
+			display: block;
+			@height: 36px;
+			width: @height;
+			height: @height;
+			line-height: @height;
+			border-radius: @height;
+			background: @primary-color;
+			color: #fff;
+			text-align: center;
+			font-size: 16px;
+			font-family: @head-font;
+			&:hover{
+				background: @primary-600;
+			}
+		}
+	}
+
+}

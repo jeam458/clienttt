@@ -1,0 +1,46 @@
+/*---------- 2.19 Pagination ----------*/
+
+.pagination-wrap{
+  background: #fff;
+  border: 1px solid @gray-50;
+  padding: 20px;
+  margin-bottom:30px;
+  .pagination{
+    float: right;
+  }
+}
+
+.pagination{
+  margin: 0;
+  li{
+    a, span{
+      margin-right: 5px;
+      padding: 8px 15px;
+    }
+    &:last-child{
+      a, span{
+        margin-right: 0;
+      }
+    }
+  }
+  
+  &.circle{
+    li{
+      a, span{
+        border-radius: 80px;
+      }
+    }
+  }
+}
+
+.total{
+  line-height: 38px;
+}
+
+@media screen and (max-width: 440px){
+  .pagination-wrap{
+    .pagination{
+      float: none;
+    }
+  }
+}

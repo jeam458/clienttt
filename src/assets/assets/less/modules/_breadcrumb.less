@@ -1,0 +1,45 @@
+/*---------- 2.14 Breadcrumb ----------*/
+
+.breadcrumb{
+  display: inline-block;
+  margin: 15px 20px 0;
+  padding: 0;
+  background: none;
+  float: right;
+  position: relative;
+  li{
+   @height: 30px;
+   height: @height;
+   line-height: @height;
+   float: left;
+   display: inline-block;
+   a{
+    .icon-home{
+      font-size: 20px;
+    }
+    &:hover{
+      color: @primary-color;
+    }
+  }
+}
+&.boxed{
+  background: fade(@base-color, 10%);
+  padding-left: 15px;
+  padding-right: 15px;
+  .border-radius(2px);
+  & > li{
+    & + li:before{
+      content: '\f105';
+      font-family: 'FontAwesome';
+    }
+  }
+}
+}
+
+@media screen and (max-width: @screen-media-sm){
+  .breadcrumb{
+    float: left;
+    padding: 15px;
+    margin:  0;
+  }
+}

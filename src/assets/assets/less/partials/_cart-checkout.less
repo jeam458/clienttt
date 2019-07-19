@@ -1,0 +1,96 @@
+/*---------- 3.7 Cart and Checkout Page ----------*/
+
+.checkout-page, .cart-page{
+	padding: 50px 0;
+}
+
+.cart-checkout-table{
+	tr:first-child{
+		td{
+			border-top: 0px;
+		}
+	}
+	th, td{	
+		color: @gray-900;
+		vertical-align: middle !important;
+		&.price{
+			font-weight: bold;
+			text-align: right;
+		}
+	}
+	.item-img{
+		@height: 60px;
+		height: @height;
+		width: @height;
+	}
+	.desc{
+		min-width: 200px;
+		max-width: 300px;
+	}
+	.total{
+		td{
+			border-top: 3px double @gray-100;
+			padding-top: 20px;
+			font-size: 1.2em;
+		}
+	}
+}
+.counter-number{
+	@input-width: 30px;
+	@height: 30px;
+	height: 30px;
+	width: @input-width + 2 * @height;
+	position: relative;
+	.add, .sub{
+		float: left;
+		height: @height;
+		width: @height;
+		line-height: @height;
+		background: #eee;
+		border: 1px solid #ccc;
+		display: inline-block;
+		text-align: center;
+		cursor: pointer;
+		&:hover{
+			background: #ddd;
+		}
+	}
+	.add{
+		float: right;
+	}
+	input{
+		width: @input-width;
+		height: @height;
+		margin: 0;
+		position: absolute;
+		left: @height;
+		top: 0;
+		text-align: center;
+	}
+}
+
+.card-option{
+	.btn{
+		padding: 10px;
+		border: 1px solid @gray-50;
+		&.active{
+			.box-shadow(inset 0 0 10px rgba(0, 0, 0, 0.25));
+		}
+	}
+}
+
+@media screen and (max-width: @screen-md){
+	.card-option{
+		img{
+			width: 50px;
+		}
+	}
+}
+
+@media screen and (max-width: @screen-media-sm){
+	.cart-checkout-table{
+		.desc{
+			display: none;
+		}
+	}
+}

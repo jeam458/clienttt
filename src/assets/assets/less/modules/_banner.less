@@ -1,0 +1,74 @@
+/*---------- 2.8  Banner ----------*/
+
+.banner{
+	padding: 60px 0;
+	overflow: hidden;
+	h1, h2, h3, h4, h5, h6{
+		margin-top: 0;
+		margin-bottom: 20px;
+		font-weight: bold;
+	}
+	.line-box{
+		text-align: center;
+		border: 2px solid fade(@primary-color, 80%);
+		padding:0 30px 30px;
+		.line-title{
+			background: @body-bg;
+			display: table;
+			margin: -15px auto 30px;
+			padding: 0 30px;
+			letter-spacing: 1px;
+			font-size: 1.2em;
+			text-transform: uppercase;
+			font-family: @head-font;
+		}
+	}
+	&.white{
+		background: #fff;
+		color: @font-color;
+	}
+	&.base{
+		background: @base-color;
+		color: @base-contrast;
+		.line-title{
+			background: @base-color;
+		}
+	}
+	&.primary{
+		background: @primary-color;
+		color: #fff;
+		.line-box{
+			border: 2px solid fade(@base-color, 30%);
+		}
+		.line-title{
+			background: @primary-color;
+		}
+	}
+	&.gray{
+		background: @gray-50;
+		color: @gray-900;
+		.line-box{
+			border: 2px solid fade(@primary-color, 30%);
+		}
+		.line-title{
+			background: @gray-50;
+		}
+	}
+}
+
+.container{
+	.line-box{
+		margin: 0 60px;
+	}
+}
+
+@media screen and (max-width: @screen-media-sm){
+	.banner{
+		padding: 30px 0;
+	}
+	.container{
+		.line-box{
+			margin: 0 10px;
+		}
+	}
+}

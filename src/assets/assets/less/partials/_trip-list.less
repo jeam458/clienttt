@@ -1,0 +1,137 @@
+/*---------- 3.3 Trip List ----------*/
+
+.item-list{
+	border: 1px solid @gray-50;
+	background: #fff;
+	margin-bottom: 30px;
+	&:after{
+		clear: both;
+		display: table;
+		content: '';	
+	}
+	.item-img{
+		@img-height: 250px;
+		height: @img-height;
+		width: auto;
+		background-color: #eee;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		position: relative;
+		.item-overlay{
+			width: 100%;
+			height: 100%;
+			line-height: 100%;
+			font-size: .9em;
+			text-align: center;
+			color: #fff;
+			background: fade(@primary-900, 80%);
+			position: absolute;
+			top: 0;
+			left: 0px;
+			opacity: 0;
+			cursor: pointer;
+			.transition(all .1s linear);
+			[class^="icon-"]{
+				margin-top: @img-height/2 - 25px;
+				display: inline-block;
+				font-size: 0px;
+				width: 0;
+				height: 0;
+				line-height: 0;
+				background: @primary-color;
+				.border-radius(0);
+				.rotate(-90deg); 
+				.transition(all .1s linear);
+			}
+			a{
+				color: #fff;
+			} 
+		}
+		&:hover{
+			.item-overlay{
+				opacity: 1;
+				.transition(all .1s linear);
+				[class^="icon-"]{
+					@img-height: 50px;
+					font-size: 30px;
+					width: @img-height;
+					height: @img-height;
+					line-height: @img-height;
+					.border-radius(@img-height);
+					.rotate(0deg);  
+					.transition(all .2s linear);
+				}
+			}
+		}
+	}
+
+	.item-desc{
+		padding: 30px 0px 10px;
+		clear: both;
+		overflow: hidden;
+		[class^='icon-'], .fa, .glyphicon {
+			font-size: 24px;
+			vertical-align: middle;
+			margin-right: 5px;
+			color: @primary-color;
+		}
+		.item-title{
+			font-size: 1.4em;
+			font-weight: 600;
+			margin:0 0 5px;
+			font-family: @head-font;
+		}
+		.sub-title{
+			min-height: 20px;
+			margin-bottom: 5px;
+			font-size: .8em;
+			color: @gray-400;
+			clear: both;
+		}
+
+		.item-excerpt{
+			max-height: 32px;
+			margin-bottom: 15px;
+			overflow: hidden;
+			font-size: .9em;
+			color: @gray-800;
+		}
+		.left{
+			width: 50%;
+			float: left;
+		}
+		.right{
+			text-align: right;
+		}
+	}
+
+	.item-book{
+		border-top: 1px solid #f2f2f2;
+		margin: 0 0 5px;
+		padding-top: 15px;
+		overflow: hidden;
+		clear: both;
+		.price{
+			float: right;
+			font-size: 1.4em;
+			line-height: 36px;
+		}
+		.btn{
+			float: left;
+		}
+	}
+
+}
+
+@media screen and (max-width: @screen-media-sm){
+	.item-list{
+		.item-desc {
+			.left, .right{
+				float: none;
+				text-align: left;
+				width: 100%;
+			}
+		}
+	}
+}

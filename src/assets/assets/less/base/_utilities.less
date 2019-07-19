@@ -1,0 +1,53 @@
+/*---------- 1.2 Utilities ----------*/
+html.full-height{
+	height: 100%;
+}
+
+.container-fluid{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+hr.dark{
+	border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+.pull-center{
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.tooltip-inner{
+	border-radius: 2px;
+}
+
+.italic{
+	font-style: italic;
+}
+
+.no-padding > [class*="col-"] {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.dot{
+	display: inline-block;
+	@height: 6px;
+	height: @height;
+	width: @height;
+	border-radius: @height;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: transparent;
+	background: @gray-200;
+	vertical-align: middle;
+}
+
+@media screen and (max-width: @screen-sm){
+	.container-fluid{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}

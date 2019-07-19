@@ -1,0 +1,69 @@
+/*---------- 2.5  Page Header ----------*/
+
+.page-img{
+  margin: 0;
+  padding: 120px 0;
+  background-repeat:  no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: @primary-color;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  &:before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    // Twitter Bootstrap's mixin
+    #gradient.horizontal(@start-color : #000; @end-color : fade(@primary-700, 60%); @start-percent : 0%; @end-percent : 100%);
+    opacity: .8;
+  }
+
+  .main-title{
+    h1, h2, h3, h4, h5, h6{
+      text-transform: uppercase;
+    }
+  }
+
+  .main-head{
+    font-family: @head-font;
+    font-size: 3.6em;
+    font-weight: bold;
+    margin: 0px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  .sub-head{
+    color: @gray-50;
+    font-family: @body-font;
+  }
+
+
+  .breadcrumb{
+    margin-top: 40px;
+    a{
+      color: #fff;
+    }
+  }
+
+  & > div{
+    position: relative;
+    z-index: 9;
+  }
+}
+
+
+@media screen and (max-width: @screen-md){
+  .page-img{
+    padding: 60px 0; 
+    .main-head{
+      font-size: 2.6em;
+      margin: 10px 0;
+    }
+  }
+}
+

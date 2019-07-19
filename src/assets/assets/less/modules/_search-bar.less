@@ -1,0 +1,75 @@
+/*---------- 2.28 Search Bar ----------*/
+
+@bar-height: 120px;
+.search-bar{
+	background: fade(@base-700, 80%);
+	color: rgba(255, 255 , 255, 0.8);
+	z-index: 9;
+	position: relative;
+	text-align: left;
+	.text-wrap{
+		text-align: right;
+		margin-top: 22px;
+		border-right: 1px solid fade(@primary-700, 20%);
+		h1,h2,h3,h4,h5,h6{
+			margin: 0;
+		}
+	}
+	.form-group{
+		margin-top: 20px;
+	}
+	label{
+		color: rgba(255, 255 , 255, 0.8);
+		font-weight: normal;
+	}
+	.form-control{
+		border:1px solid #fff;
+	}
+	.btn-search{
+		margin: 43px 0 20px;
+		width: 100%;
+	}
+
+	&.bottom{
+		margin-top: -95px;
+	}
+	&.boxed{
+		background: transparent;
+		.container{
+			background: rgba(0,0,0,.8);
+		}
+	}
+}
+
+.boxed + .search-bar{
+	margin-bottom: 0px;
+	&.container{
+		margin-top: -@bar-height;
+	}
+}
+
+@media screen and (max-width: @screen-media-sm){
+	.search-bar{
+		margin-top: 0;
+		background: #000;
+		&.container{
+			margin-top: 0;
+		}
+		.text-wrap{
+			text-align: left;
+			border-right: 0;
+		}
+		.btn-search{
+			margin: 10px 0 30px;
+		}
+		&.bottom{
+			position: relative;
+			bottom: auto;
+		}
+	}
+	.boxed + .search-bar{
+		&.container{
+			margin-top: 0;
+		}
+	}
+}

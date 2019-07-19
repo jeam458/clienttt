@@ -1,0 +1,80 @@
+/*---------- 2.17 Accordion ----------*/
+
+.panel {
+ border: 1px solid @gray-50;
+ border-radius: 0;
+ box-shadow: none;
+ margin-bottom: 20px;
+ & > .panel-heading {
+  background-color: #fff;
+  border-bottom: medium none;
+  border-radius: 0;
+  padding: 18px 20px;
+  text-transform: uppercase;
+  position: relative;
+}
+}
+.panel-title{
+  font-size: 1rem;
+  & > a {
+    color: @font-color;
+    display: block;
+    letter-spacing: 2px;
+    padding: 0 55px 0 0;
+    &::before {
+      border-left: 1px solid @gray-50;
+      color: @gray-500;
+      content: "\f068";
+      font-family: FontAwesome;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 24px;
+      height: 100%;
+      margin-top: 0;
+      padding: 16px 20px 14px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: #fff;
+    }
+    &.collapsed::before {
+      border-left: 1px solid @gray-50;
+      color: @gray-500;
+      content: "\f067";
+      font-family: FontAwesome;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: normal;
+      height: 100%;
+      margin-top: 0;
+      padding: 16px 20px 14px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: #fff;
+    }
+  }
+}
+
+.panel-group .panel-heading + .panel-collapse > .panel-body, 
+.panel-group .panel-heading + .panel-collapse > .list-group 
+{
+  border-top: 1px solid @gray-50;
+  padding: 18px 23px;
+}
+
+
+.panel-base{
+  .panel-title > a{
+    &::before {
+      color: #fff;
+      background: @base-500;
+    }
+    &.collapsed::before {
+      color: #fff;
+      background: @base-500;
+    }
+  }
+} 
+

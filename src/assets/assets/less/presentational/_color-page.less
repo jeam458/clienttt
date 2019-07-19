@@ -1,0 +1,255 @@
+/*---------- 5.2 Color Page ----------*/
+
+.color-section{
+	hr{
+		margin: 15px 0 25px;
+	}
+	.color-div{
+		clear: both;
+		display: table;
+		margin: 0 auto 10px;
+		& > div{
+			@height: 34px;
+			height: @height;
+			width: @height;
+			border: 3px solid rgba(0,0,0,0.2);
+			position: relative;
+			.after{
+				width: 100px;
+				position: absolute;
+				top: 2px;
+				right: -120px;
+			}
+			.before{
+				width: 120px;
+				text-align: right;
+				position: absolute;
+				top: 2px;
+				left: -140px;
+			}
+			&.primary-hover{
+				background: @primary-hover;
+				&:before{
+					content: '@primary-hover';
+					.before;
+				}
+				&:after{
+					content: '@{primary-hover}';
+					.after;
+				}
+			}
+			&.primary-contrast{
+				background: @primary-contrast;
+				&:before{
+					content: '@primary-contrast';
+					.before;
+				}
+				&:after{
+					content: '@{primary-contrast}';
+					.after;
+				}
+			}
+			&.base-contrast{
+				background: @base-contrast;
+				&:before{
+					content: '@base-contrast';
+					.before;
+				}
+				&:after{
+					content: '@{base-contrast}';
+					.after;
+				}
+			}
+			&.base-color{
+				background: @base-color;
+				&:before{
+					content: '@base-color';
+					.before;
+				}
+				&:after{
+					content: '@{base-color}';
+					.after;
+				}
+			}
+
+			&.gray-color{
+				background: @gray-color;
+				&:before{
+					content: '@gray-color';
+					.before;
+				}
+				&:after{
+					content: '@{gray-color}';
+					.after;
+				}
+			}
+			&.body-bg{
+				background: @body-bg;
+				&:before{
+					content: '@body-bg';
+					.before;
+				}
+				&:after{
+					content: '@{body-bg}';
+					.after;
+				}
+			}
+
+			&.font-color{
+				background: @font-color;
+				&:before{
+					content: '@font-color';
+					.before;
+				}
+				&:after{
+					content: '@{font-color}';
+					.after;
+				}
+			}
+
+			&.success-color{
+				background: @success-color;
+				&:before{
+					content: '@success-color';
+					.before;
+				}
+				&:after{
+					content: '@{success-color}';
+					.after;
+				}
+			}
+
+			&.danger-color{
+				background: @danger-color;
+				&:before{
+					content: '@danger-color';
+					.before;
+				}
+				&:after{
+					content: '@{danger-color}';
+					.after;
+				}
+			}
+
+			&.warning-color{
+				background: @warning-color;
+				&:before{
+					content: '@warning-color';
+					.before;
+				}
+				&:after{
+					content: '@{warning-color}';
+					.after;
+				}
+			}
+
+			&.info-color{
+				background: @info-color;
+				&:before{
+					content: '@info-color';
+					.before;
+				}
+				&:after{
+					content: '@{info-color}';
+					.after;
+				}
+			}
+
+		}
+	}
+}
+
+
+ul.color-label{
+	list-style: none;
+	padding: 0;
+	display: table;
+	margin: 0 auto;
+	li{
+		width: 200px;
+		height: 58px;
+		line-height: 58px;
+		text-align: center;
+		@color-dark: #444;
+		@color-light: #fff;
+		color: @color-dark;
+		&.primary-50{
+			background: @primary-50;
+		}
+		&.primary-100{
+			background: @primary-100;
+		}
+		&.primary-200{
+			background: @primary-200;
+		}
+		&.primary-300{
+			background: @primary-300;
+		}
+		&.primary-400{
+			background: @primary-400;
+		}
+		&.primary-500{
+			background: @primary-color;
+			height: 100px;
+			line-height: 30px;
+			padding-top: 20px;
+			color: @color-light;
+		}
+		&.primary-600{
+			background: @primary-600;
+			color: @color-light;
+		}
+		&.primary-700{
+			background: @primary-700;
+			color: @color-light;
+		}
+		&.primary-800{
+			background: @primary-800;
+			color: @color-light;
+		}
+		&.primary-900{
+			background: @primary-900;
+			color: @color-light;
+		}
+
+
+		&.gray-50{
+			background: @gray-50;
+		}
+		&.gray-100{
+			background: @gray-100;
+		}
+		&.gray-200{
+			background: @gray-200;
+		}
+		&.gray-300{
+			background: @gray-300;
+		}
+		&.gray-400{
+			background: @gray-400;
+		}
+		&.gray-500{
+			background: @gray-color;
+			height: 100px;
+			line-height: 30px;
+			padding-top: 20px;
+			color: @color-light;
+		}
+		&.gray-600{
+			background: @gray-600;
+			color: @color-light;
+		}
+		&.gray-700{
+			background: @gray-700;
+			color: @color-light;
+		}
+		&.gray-800{
+			background: @gray-800;
+			color: @color-light;
+		}
+		&.gray-900{
+			background: @gray-900;
+			color: @color-light;
+		}
+	}
+}

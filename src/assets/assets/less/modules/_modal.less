@@ -1,0 +1,78 @@
+/*---------- 2.15 Modal ----------*/
+/*bootstrap modal overwrite*/
+.modal-header .close{
+	font-size: 35px;
+}
+
+
+/*jqueryui dialog overwrite*/
+.modal-dialog {
+	margin: 95px auto;
+}
+.modal-footer .btn{
+	margin-bottom: 0;
+}
+
+.modal-book-now{
+	.modal-body{
+		background: @body-bg;
+	}
+	.preview-wrap{
+		height: 100%;
+		width: 100%;
+		margin: 0px auto;
+		position: relative;
+		.preview-img{
+			height: 100%;
+			width: 60%;
+			background-color: #eee;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.form-wrap{
+			margin-left: 60%;
+			padding: 30px;
+			width: 40%;
+			background: #fff;
+			.btn{
+				width: 100%;
+				padding: 15px;
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: @screen-md) {
+	.modal-book-now{
+		.preview-wrap{
+			.preview-img{
+				width: 40%;
+			}
+			.form-wrap{
+				margin-left: 40%;
+				width: 60%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: @screen-media-sm) {
+	.modal-book-now{
+		.preview-wrap{
+			.preview-img{
+				height: 200px;
+				width: 100%;
+				position: relative;
+			}
+			.form-wrap{
+				margin-left: 0;
+				width: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,82 @@
+/*----------  2.21 Sort Bar ----------*/
+
+.sort-wrap{
+  border: 1px solid @gray-50;
+  background: #fff;
+  display: block;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  box-sizing: content-box;
+  .sort-title{
+    color: #4b4b4b;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin: 20px 0;
+  }
+  label{
+    color: @gray-500;
+  }
+  .form-control{
+    display: inline-block;
+  }
+  .form-group{
+    display: inline-block;
+    width: auto;
+    min-width: 120px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    &.form-group-sm{
+      width: 60px;
+      min-width: 60px;
+      .form-control{
+        height: 34px;
+      }
+    }
+  }
+  .btn{
+    margin-bottom: 0px;
+  }
+
+}
+
+.toogle-view{
+  float: right;
+  margin-top: 20px;
+  .icon{
+    display: inline-block;
+    font-size: 20px;
+    @height: 30px;
+    height: @height;
+    width: @height;
+    line-height: @height;
+    margin-left: 5px;
+    text-align:  center;
+    background: #fff;
+    color: @gray-500;
+    border: 1px solid @gray-50;
+    &:hover, &.active{
+      background: @primary-color;
+      border: 1px solid @primary-color;
+      color: #fff;
+    }
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-md){
+  .toogle-view{
+    float: none;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: @screen-media-sm){
+  .sort-wrap{
+    .form-group, .form-group.form-group-sm{
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Nuevo grupo {{data.grupo.Nombre}}</h1>
+<div mat-dialog-content >
+    <!--<p>numero de integrantes</p>
+    <mat-form-field>
+        <input matInput type="number" [(ngModel)]="pasajeros" (ngModelChange)="modificarpasajeros(pasajeros)" min="1" max="{{maximopasajero}}">
+    </mat-form-field>-->
+            <div class="card">
+                <!--<div class="card-header card-header-icon" data-background-color="green">
+                    <i class="material-icons">assignment_ind</i>
+                </div>-->
+                <div class="card-content">
+                    <!--<h4 class="card-title">Seleccione la mejor opcion</h4>-->
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group label-floating ">
+                                        <label class="control-label">Tipo de grupo</label>
+                                        <select name="Tipogrupo" id="" class="form-control" [(ngModel)]="data.grupo.TipoGrupo">
+                                            <option [value]="tipo.id" *ngFor="let tipo of tipo_grupo.availableOptions">
+                                                {{tipo.name}}
+                                            </option>
+                                        </select>
+                                    </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="input-group">
+                                    <div class="form-group label-floating ">
+                                        <label class="control-label">Integrantes</label>
+                                        <input [(ngModel)]="data.pasajeros" name="pasajeros" type="number" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" class="btn btn-behance orange btn-round">cancelar</button>
+    <button mat-button (click)="addIntegrantes(data.grupo)" class="btn btn-behance green btn-round" cdkFocusInitial>continuar</button>
+</div>

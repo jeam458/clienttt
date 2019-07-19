@@ -1,0 +1,189 @@
+/*---------- 3.2 Trip Grid ----------*/
+
+.item-grid{
+	margin-bottom: 30px;
+	position: relative;
+	border: 1px solid @gray-50;
+	.item-img{
+		@img-height: 240px;
+		height: @img-height;
+		width: 100%;
+		background-color: #eee;
+		background-size: 130%;
+		background-repeat: no-repeat;
+		background-position: top center;
+		position: relative;
+		overflow: hidden; 
+		.item-overlay{
+			width: 100%;
+			height: 100%;
+			line-height: 100%;
+			font-size: .9em;
+			text-align: center;
+			color: #fff;
+			background: fade(@primary-900, 80%);
+			position: absolute;
+			top: 0;
+			left: 0px;
+			opacity: 0;
+			.transition(all .1s linear);
+			[class^="icon-"]{
+				margin-top: @img-height/2 - 25px;
+				display: inline-block;
+				font-size: 0px;
+				width: 0;
+				height: 0;
+				line-height: 0;
+				background: @primary-color;
+				.border-radius(0);
+				.rotate(-90deg); 
+				.transition(all .1s linear);
+			}
+			a{
+				color: #fff;
+			} 
+		}
+		&:hover{
+			.item-overlay{
+				opacity: 1;
+				.transition(all .1s linear);
+				[class^="icon-"]{
+					@height: 50px;
+					font-size: 30px;
+					width: @height;
+					height: @height;
+					line-height: @height;
+					.border-radius(@height);
+					.rotate(0deg);  
+					.transition(all .2s linear);
+				}
+			}
+		}
+	}
+
+	.item-desc{
+		background: #ffffff;
+		color: @font-color;
+		padding: 20px 20px 15px;
+		.transition(all linear 2s);
+
+
+		.item-info{
+			@icon-width: 30px;
+			.title{
+				margin-right: @icon-width;
+				font-size: 1.4em;
+				font-family: @head-font;
+				margin-bottom: 2px;
+				line-height: 1.2em;
+				a{
+					color: @font-color;
+					&:hover{
+						color: @primary-color;
+					}
+				}
+			}
+			[class^='icon-'], .fa, .glyphicon {
+				float: right;
+				margin-bottom: 2px;
+				line-height: 30px;
+				font-size: 30px;
+			}
+		}
+		
+		.sub-title{
+			min-height: 20px;
+			margin-bottom: 15px;
+			font-size: .8em;
+			color: @gray-400;
+			clear: both;
+			.location{
+				float: left;
+			}
+			.grade{
+				float: right;
+			}
+		}
+
+		.item-detail{
+			clear: both;
+			.left{
+				width: 50%;
+				float: left;
+				text-align: left;
+				vertical-align: middle;
+				.day, .night{
+					line-height: 30px;
+					vertical-align: middle;
+				}
+				.day{
+					border-bottom: 1px solid @gray-50;
+					margin-bottom: 5px;
+					padding-bottom: 5px;
+					padding-top: 5px;
+				}
+				[class^='icon-'], .fa, .glyphicon {
+					font-size: 18px;
+					vertical-align: middle;
+					margin-right: 5px;
+					color: @gray-200;
+					width: 20px;
+				}
+				.icon-moon{
+					font-size: 16px;
+				}
+			}
+			.right{
+				margin-left: 50%;
+				font-size: .9em;
+				text-align: right;
+			}
+			.price{
+				font-size: 1.6em;
+				margin-bottom: 5px;
+			}
+		}
+		
+	}
+}
+
+.item{
+	.col-md-4{
+		&:nth-child(1), 
+		&:nth-child(4), 
+		&:nth-child(7), 
+		&:nth-child(10), 
+		&:nth-child(13), 
+		&:nth-child(16) 
+		&:nth-child(19)
+		&:nth-child(22),
+		&:nth-child(25){
+			clear: left;
+		}
+	}
+}
+
+@media screen and (max-width: @screen-md){
+	.item{
+		.col-md-4{
+			&:nth-child(1), 
+			&:nth-child(4), 
+			&:nth-child(7), 
+			&:nth-child(10), 
+			&:nth-child(13), 
+			&:nth-child(16) 
+			&:nth-child(19)
+			&:nth-child(22),
+			&:nth-child(25){
+				clear: none;
+			}
+		}
+		.col-sm-6{
+			&:nth-child(2n+1){
+				clear: left;
+			}
+		}
+	}
+}
+
+

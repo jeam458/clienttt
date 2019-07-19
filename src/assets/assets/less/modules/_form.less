@@ -1,0 +1,62 @@
+/*---------- 2.12 Form Elemets ----------*/
+
+@form-height: 34px;
+label{
+	margin-bottom: 3px;
+	font-size: .9em;
+	font-weight: normal;
+}
+.required{
+	color: @danger-color;
+}
+
+.form-control{
+	border: 1px solid @gray-50;
+	border-radius: 0px;
+	box-shadow: none;
+	&:focus {
+		border-color: fade(@primary-color, 50%);
+		box-shadow: none;
+		outline: 0 none;
+	}
+}
+textarea.form-control{
+	min-height: 105px;
+}
+
+select.form-control{
+	border: 0;
+	outline: 1px solid  @gray-50;
+	background-color: white;
+	position: relative;
+	&:focus{
+		border: 0;
+		outline: 1px solid  @gray-50;
+		background-color: white;
+	}
+	option{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+.radio label, .checkbox label{
+	line-height: 20px;
+}
+
+.input-group{
+	.input-group-addon{
+		font-size: 20px;
+		border-radius: 0px;
+		color: @primary-color;
+		padding: 0 12px;
+	}
+	.input-group-btn{
+		.btn{
+			margin-bottom: 0;
+		}
+	}
+}
+input.datepicker{
+	background: url('@{baseurl}/calendar.png') no-repeat center right 5px #ffffff;
+}

@@ -1,0 +1,177 @@
+<div class="wrapper wrapper-full-page">
+    <div class="full-page lock-page">
+        <div class="content" style="background-color: white; padding-top:20px">
+                <!--<ngx-carousel class="banner" [inputs]="carouselBanner">        
+                        <ngx-item NgxCarouselItem *ngFor="let image of slides; let i = index;">
+                            <div class="bannerStyle" [style.background]="'url(' + image.img + ')'">
+                                <h1 style="color: transparent">{{i}}</h1>
+                            </div>
+                        </ngx-item>
+                        <button NgxCarouselPrev class="leftRs">&lt;</button>
+                        <button NgxCarouselNext class="rightRs">&gt;</button>
+                </ngx-carousel>-->
+            <section class="black">
+                <div class="carousel carousel-slider" data-indicators="true" style="height: 500px">
+                  <div class="carousel-fixed-item">
+                    <div class="container">
+                        <div class="text-center white-text">
+                            <h1>{{datoshome.Nombre}}</h1>
+                            <p>{{datoshome.Descripcion}}</p>
+                       </div>
+                        <div id="app">
+                                <form class="example-form" [formGroup]='buscadorForm'>
+                                    <p style="font-size: 12px">
+                                        <mat-form-field class="example-full-width" style="display: inline;">
+                                            <input matInput type="text" placeholder="Buscar Tour" [matAutocomplete]="auto" formControlName='buscadorInput'>
+                                        </mat-form-field>
+                                    </p>
+                                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                                        <mat-option *ngIf="isLoading" class="is-loading">
+                                            <mat-spinner diameter="50"></mat-spinner>
+                                        </mat-option>
+                                        <ng-container *ngIf="!isLoading">
+                                            <mat-option *ngFor="let tour of resultados" [value]="tour.Nombre" (click)="gotodetalle(tour._id)">
+                                                <img [src]="tour.img" alt="" style="float: left; width: 65px;
+                                                height: 40px;
+                                                background-size: cover;
+                                                border-radius: 5px;
+                                                margin-right: 15px;
+                                                margin-top: 4px">
+                                                <span>{{ tour.Nombre }}</span>
+                                            </mat-option>
+                                        </ng-container>
+                                    </mat-autocomplete>
+                                </form>
+                        </div>
+                    </div>
+                  </div>
+                  <div *ngFor="let image of slides; let i = index;">
+                        <div class="carousel-item red lighten-2 white-text" href="#i" [style.background]="'url(' + image.img + ')'">
+                                <div class="container" >
+                                   
+                                </div>  
+                        </div>
+                  </div>
+                </div>
+              </section>
+              <div class="fixed-action-btn"><a class="btn-floating btn-large red" href=""><i class="large material-icons">chat</i></a></div>
+            <hr>
+            <div class="container">
+                <!--<div class="row">
+                    <div class="jumbotron text-center">
+                        <h1>{{datoshome.Nombre}}</h1>
+                        <p>{{datoshome.Descripcion}}</p>
+                        <div>
+                            <a *ngIf="!authService.loggedIn()" routerLink="/register" class="btn btn-primary">Register</a>
+                            <a *ngIf="authService.loggedIn()" routerLink="/dashboard" class="btn btn-info">Dashboard</a>
+                            <a *ngIf="!authService.loggedIn()" routerLink="/login" class="btn btn-warning">Login</a>
+                        </div>
+                    </div>
+                </div>-->
+                <div class="col-md-12 cols-sm-12 gol-lg-12">
+                    <ngx-carousel [inputs]="carouselTileTwo">
+                            <ngx-tile NgxCarouselItem *ngFor="let grupo of grupos; let i = index;" >
+                                        <div class="card blue-grey.lighten-4"  style="box-shadow:none">
+                                                <div class="card-content" style="margin-top: -25px">
+                                                    <h4 class="category" style="font-size:16px;font-weight:bold">{{grupo.Nombre}}</h4>
+                                                    <p class="card-title" style="font-size:12px;color: #007d9e" >USD {{porfactpago1(grupo)}} <s>{{grupo.PorPagar}}</s></p>
+                                                    <owl-carousel-o [options]="customOptions2" style="margin: auto;width: 50%">
+                                                        <div *ngFor="let flat of grupo.Integrantes">
+                                                            <ng-template carouselSlide>
+                                                                <div class="icon icon-locate">
+                                                                    <!--<i class="material-icons">home</i>-->
+                                                                    <img class="avatar" style="width: 32px;height: 32px;display: inline" src="https://www.countryflags.io/{{flat.Nacionalidad}}/flat/32.png">
+                                                                    <img class="avatar" *ngIf="flat.Sexo==1" style="width: 32px;height: 32px;display: inline;padding-bottom: 2px" src="../../../assets/femaleicon.svg">
+                                                                    <img class="avatar" *ngIf="flat.Sexo==0" style="width: 32px;height: 32px;display: inline;padding-bottom: 2px" src="../../../assets/maleicon.svg">
+                                                                    <a style="display: inline;font-size: 15px">{{flat.Edad}}</a>
+                                                                </div>
+                                                            </ng-template>
+                                                        </div>
+                                                    </owl-carousel-o>
+                                                    <p class="card-description" style="font-size:10px;text-align: initial">miembros {{grupo.Integrantes.length}} de {{grupo.MaxIntegrantes}}</p>
+                                                    <!--<i class="material-icons">calendar_today</i>-->
+                                                    <p class="card-description" style="font-size:10px;margin-top: -15px;text-align: initial">
+                                                        Limite de reserva {{grupo.FechaMargen | date: 'dd/MM/yyyy'}}
+                                                    </p>
+                                                    <p class="card-description" style="font-size:10px;margin-top: -15px;text-align: initial">
+                                                        Inicio de Tour {{grupo.FechaInicioTour | date: 'dd/MM/yyyy'}}
+                                                    </p>
+                                                </div>
+                                                <div class="card-footer center-align" style="margin-top: -25px">
+                                                    <a (click)="addIntegrantes(grupo)" class="btn  orange" style="font-size:10px;margin-top: -10px;margin-bottom: -30px">Reservar</a>
+                                                </div>
+                                        </div>
+                                
+                            </ngx-tile>
+                            <button NgxCarouselPrev class="leftRs">&lt;</button>
+                            <button NgxCarouselNext class="rightRs">&gt;</button>
+                        </ngx-carousel>
+            </div>
+                <div class="row">
+                    <div *ngFor="let tour of paquetes">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card card-product item-grid">
+                                <div class="card-image" data-header-animation="true">
+                                    <a href="#pablo">
+                                        <img class="img item-img" [src]="tour.img">
+                                    </a>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-actions">
+                                        <!--<button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                                    <i class="material-icons">build</i> Fix Header!
+                                                </button>
+                                        <button type="button" class="btn btn-default btn-simple" matTooltip="View">
+                                                    <i class="material-icons">art_track</i>
+                                                </button>-->
+                                        <button type="button" class="btn btn-success btn-simple" matTooltip="Busca tu grupo" [value]="tour" (click)="gotodetalle(tour._id)">
+                                                    <i class="material-icons">shopping_basket</i> Reservar
+                                                </button>
+                                        <!--<button type="button" class="btn btn-danger btn-simple" matTooltip="Remove">
+                                                    <i class="material-icons">close</i>
+                                                </button>-->
+                                    </div>
+                                    <h4 class="card-title">
+                                        <a (click)="gotodetalle(tour._id)">{{tour.Nombre}}</a>
+                                    </h4>
+                                    <div class="card-description">
+                                        tour de muchas aventuras, atracciones...
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="price">
+                                        <h4>$ {{tour.Costo}}</h4>
+                                    </div>
+                                    <div class="stats pull-right">
+
+                                        <p class="category"><i class="material-icons">place</i><span>{{tour.Ubicacion[0].text}}, </span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--<div class="full-page-background" style="background-image: url(../../../assets/img/lock.jpeg) "></div>---->
+    </div>
+</div>
+<!--<div class="full-page lock-page" filter-color="black">
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron text-center">
+                    <h1>Mean Register Login</h1>
+                    <p>Welcome to the MEAN Stack Application</p>
+                    <div>
+                        <a *ngIf="!authService.loggedIn()" routerLink="/register" class="btn btn-primary">Register</a>
+                        <a *ngIf="authService.loggedIn()" routerLink="/dashboard" class="btn btn-info">Dashboard</a>
+                        <a *ngIf="!authService.loggedIn()" routerLink="/login" class="btn btn-warning">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full-page-background" style="background-image: url(../../../assets/img/lock.jpeg) "></div>
+</div>-->

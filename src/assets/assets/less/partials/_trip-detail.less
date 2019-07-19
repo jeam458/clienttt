@@ -1,0 +1,266 @@
+/*---------- 3.4 Trip Detail ----------*/
+
+.trip-insight{
+	.insight-list-wrap{
+		margin: 0 auto;
+		padding: 30px 0 10px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		.insight-list{
+			display: table;
+			margin: 20px auto 20px;
+			[class^='icon-'], .fa, .glyphicon {
+				font-size: 40px;
+				float: left;
+			}
+			.txt{
+				margin-left: 46px;
+				p,h1,h2,h3,h4,h5,h6{
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}
+	}
+	.social-icon{
+		display: table;
+		margin: 60px auto 0;
+		padding: 0;
+		text-align: center;
+		li{
+			display: inline-block;
+			list-style: none;
+			margin: 0 30px 15px;
+		}
+	}
+}
+
+.main-price{
+	margin-top: 40px;
+	text-align: center;
+	div{
+		font-style: italic;
+	}
+	.price{
+		font-style: normal;
+		font-size: 1.8em;
+		font-family: @head-font;
+	}
+	.btn{
+		margin-top: 20px;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+
+
+.tab-wrap{
+	margin-top: 60px;	
+	margin-bottom: 60px;
+	.affix{
+		position: fixed;
+		top: 69px;
+		z-index: 99;
+		left: 0px;
+		width: 100% !important;
+	}
+	.nav-tabs{
+		width: 100%;
+		display: -webkit-flex; /* NEW */
+		display: flex;
+		-webkit-flex-wrap: wrap; /* NEW */
+		flex-wrap: wrap;
+		border-bottom: none;
+		border-bottom: 5px solid  @primary-700;
+		li{	
+			-webkit-box-flex:1; 
+			-webkit-flex:1;
+			background: #fff;
+			font-size: 1.6em;
+			text-transform: uppercase;
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+			border-right: 1px solid rgba(0, 0, 0, 0.1);
+			//margin: 0 10px;
+			text-align: center;
+			position: relative;
+			a{
+				height: 100%;
+				padding: 10px;
+				margin: 0;
+				border-color: transparent;
+				border-right: 0;
+				background: #fff;
+				color: @font-color;
+				font-size: 1.2rem;
+				&:hover{
+					color: @primary-color;
+					&:after{
+						content: '';
+						height: 4px;
+						width: 100%;
+						background: @primary-color;
+						position: absolute;
+						bottom: -5px;
+						left: 0;
+						z-index: 99;
+					}
+				}
+			}
+			&:first-child{
+				margin-left: 0;
+				border-left: 1px solid rgba(0, 0, 0, 0.1);
+			}
+			&:last-child{
+				margin-right: 0;
+				border-right: 1px solid rgba(0, 0, 0, 0.1);
+			}
+			&.active{
+				a{
+					color: @primary-color;
+					color: #fff;
+					border:1px solid @primary-600;
+					border-bottom: none; 
+					background: @primary-color;
+					&:hover{
+						border-right: none;
+						&:after{
+							display: none;
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
+
+.trip-detail{
+	margin-bottom: 60px;
+
+	/*For date & price table */
+	.table{
+		td{
+			vertical-align: middle ;
+		}
+	}
+}
+
+/*used in trip-detail*/
+.paper-effect{
+	background: #fff;
+	padding: 30px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	position: relative;
+	&:before, &:after
+	{
+		position: absolute;
+		width: 40%;
+		height: 10px;
+		content: ' ';
+		left: 20px;
+		bottom: 22px;
+		background: transparent;
+			//mixin defied on mixins/_mixins.less
+			.transform(skew(-5deg) rotate(-5deg));
+			.box-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
+			z-index: -1;
+		} 
+
+		&:after
+		{
+			left: auto;
+			right: 20px;
+			//mixin defied on mixins/_mixins.less
+			.transform(skew(5deg) rotate(5deg));
+		}
+	}
+
+
+	/*overview*/
+	ul.trip-overview{
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		@icon-width: 40px;
+		li{
+			list-style: none;
+			clear: both;
+			display: block;
+			border-bottom: 1px dashed @gray-50;
+			padding: 15px 10px;
+			&:last-child{
+				border-bottom: 0px;
+			}
+		}
+		[class^='icon-'], .fa, .glyphicon {
+			font-size: 30px;
+			color: @primary-color;
+			float: left;
+			width: @icon-width;
+		}
+		.detail{
+			margin-left: @icon-width + 10px;
+			.title{
+				font-weight: bold;
+				font-size: .8em;
+			}
+			.desc{
+				color: @gray-600;
+			}
+		}
+	}
+
+	/*inclusion*/
+	ul.clean-ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		line-height: 1.2;
+		li{
+			margin-bottom: 5px;
+			display: block;
+			clear: both;
+			min-height: 30px;
+		}
+		[class^='icon-'], .fa, .glyphicon {
+			margin-top: -3px;
+			font-size: 20px;
+			vertical-align: middle;
+			color: @gray-900;
+			float: left;
+		}
+		.desc{
+			margin-left: 30px;
+		}
+	}
+
+
+	@media screen and (max-width: @screen-media-sm) {
+		.trip-insight .insight-list{
+			display: table;
+			margin: 0 auto;
+		}
+		.tab-wrap{
+			.nav-tabs{
+				display: block;
+				li{	
+					display: block;
+					width: 100%;
+					margin: 0 0 5px;
+					a{
+						display: block;
+					}
+				}
+			}
+		}
+		.paper-effect{
+			padding: 15px;
+		}
+		.trip-overview{
+			padding: 0;
+			margin:15px 0 0;
+			tr td{
+				padding: 5px;
+			}
+		}
+	}

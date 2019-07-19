@@ -1,0 +1,90 @@
+/*---------- 2.33 Footer ----------*/
+
+@footer-bg: @base-color;
+@footer-color: fade(@base-contrast, 60%);
+#footer{
+	padding-top: 60px;
+	@height: 270px;
+	background: @footer-bg;
+	color: @footer-color;
+	line-height: 1.6;
+	font-size: .9em;
+	h1,h2,h3,h4,h5,h6{
+		color: @gray-300;
+		position: relative;
+		margin-bottom: 30px;
+		&:after{
+			content: '';
+			height: 2px;
+			width: 30px;
+			background: @primary-color;
+			position: absolute;
+			bottom: -10px;
+			left: 0;
+		}
+	}
+	a{
+		color: @footer-color;
+		&:hover{
+			color: @primary-contrast;
+		}
+	}
+	p{
+		margin-top: 15px;
+	}
+	ul{
+		margin: 15px 0px 0px;
+		padding: 0px;
+		list-style: none;
+		li{
+			margin-bottom: 2px;
+		}
+	}
+
+	.social-icon-list{
+		margin: 0;
+		ul{
+			margin-top: 5px;
+		}
+		a{
+			color: #fff;
+		}
+	}
+
+	.copy{
+		margin-top: 60px;
+		padding: 10px;
+		background: fade(@base-contrast, 4%);
+		color: fade(@base-contrast, 30%);
+		font-size: .9em;
+		text-align: center;
+		span{
+			font-size: 1.6em;
+			position: relative;
+			top: 2px;
+		}
+	}
+}
+
+@media screen and (max-width: @screen-media-sm){
+	#footer{
+		padding-top: 10px;
+		text-align: center;
+		h1,h2,h3,h4,h5,h6{
+			&:after{
+				left: 50%;
+				margin-left: -15px;
+				bottom: -15px;
+			}
+		}
+		.row{
+			& > div{
+				display: block;
+				padding: 10px 30px;
+			}
+		}
+		.social-icon{
+			margin: 10px auto 0;
+		}
+	}
+}

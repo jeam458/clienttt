@@ -1,0 +1,75 @@
+<div class="wrapper wrapper-full-page">
+    <div class="full-page login-page" filter-color="black">
+
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                        <form [formGroup]="form" (submit)="onLoginSubmit()">
+                            <div class="card card-login card-hidden">
+                                <div class="card-header text-center" data-background-color="blue">
+                                    <h4 class="card-title">Login</h4>
+                                    <!--<div class="social-line">
+                                        <a href="#btn" class="btn btn-just-icon btn-simple">
+                                            <i class="fa fa-facebook-square"></i>
+                                        </a>
+                                        <a href="#pablo" class="btn btn-just-icon btn-simple">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="#eugen" class="btn btn-just-icon btn-simple">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </div>-->
+                                    <div class="row show-hide-message">
+                                        <div [ngClass]="messageCls">
+                                            {{message}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="category text-center">
+                                    Bienvenido a Tributación
+                                </p>
+                                <div class="card-content">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                                        <i class="material-icons">face</i>
+                                                   </span>
+                                        <div [ngClass]="{'has-error':(form.controls.username.errors && form.controls.username.dirty),
+                                        'has-success':!form.controls.username.errors}" class="form-group label-floating">
+                                            <label class="control-label" for="username">Usuario</label>
+                                            <input type="text" class="form-control" formControlName="username" autocomplete="off">
+                                        </div>
+                                        <ul class="help-block">
+                                            <li *ngIf="form.controls.username.errors?.required && form.controls.username.dirty">
+                                                Este campo es requerido
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                                    <i class="material-icons">lock_outline</i>
+                                               </span>
+                                        <div [ngClass]="{'has-error':(form.controls.password.errors && form.controls.password.dirty),
+                                        'has-success':!form.controls.password.errors}" class="form-group label-floating">
+                                            <label class="control-label" for="password">Password</label>
+                                            <input type="password" class="form-control" formControlName="password" autocomplete="off">
+                                        </div>
+                                        <ul class="help-block">
+                                            <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">
+                                                Este campo es requerido
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="footer text-center">
+                                    <button type="submit" [disabled]="!form.valid" type="submit" class="btn btn-rose btn-simple btn-wd btn-lg">Iniciar sesión</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="full-page-background" style="background-image: url(../../../assets/img/login.jpeg) "></div>
+    </div>
+</div>

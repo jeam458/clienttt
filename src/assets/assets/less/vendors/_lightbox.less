@@ -1,0 +1,195 @@
+/*---------- 4.3 Lightbox ----------*/
+
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  display: none;
+}
+
+.lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+}
+
+.lightbox .lb-image {
+  display: block;
+  height: auto;
+  max-width: inherit;
+}
+
+.lightbox a img {
+  border: none;
+}
+
+.lb-outerContainer {
+  position: relative;
+  background-color: white;
+  *zoom: 1;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.lb-container {
+  outline: 4px solid rgba(255, 255, 255, 0.95);
+}
+
+.lb-loader {
+  position: absolute;
+  top: 43%;
+  left: 0;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+.lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url('@{baseurl}/loading.gif') no-repeat;
+}
+
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.lb-container > .nav {
+  left: 0;
+}
+
+.lb-nav a {
+  color: #fff;
+  outline: none;
+  background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+}
+
+.lb-prev, .lb-next {
+  @height: 40px;
+  height: @height;
+  line-height: @height;
+  width: @height;
+  margin-top: -@height/2;
+  cursor: pointer;
+  display: block;
+  background: fade(@base-color, 30%);
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  .border-radius(@height);
+}
+
+
+.lb-nav a{
+  &:hover{
+    background: @base-color;
+    color: @primary-color;
+  }
+  &.lb-prev {
+    left: 10px;
+  }
+  &.lb-next {
+    right: 10px;
+  }
+
+}
+
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  *zoom: 1;
+  width: 100%;
+  position: relative;
+}
+
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.lb-data {
+  width: 100%;
+  padding: 0 4px;
+  color: #fff;
+  position: absolute;
+  height: 54px;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+
+.lb-data .lb-details {
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+}
+
+.lb-data .lb-caption {
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5em;
+}
+
+.lb-data .lb-number {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: .8em;
+  color: #ddd;
+}
+
+.lb-details{
+  position: absolute;
+  top: 7px;
+  left: 10px;
+}
+.lb-closeContainer{
+  position: relative;
+}
+.lb-data .lb-close {
+  display: block;
+  @height: 24px;
+  width: @height;
+  line-height: @height;
+  height: @height;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  color: #fff;
+  background: transparent;
+  .border-radius(@height);
+
+  position: absolute;
+  top: 14px;
+  right: 3px;
+  &:hover {
+    cursor: pointer;
+    background: darken(@danger-color, 10%);
+  }
+}
+
+

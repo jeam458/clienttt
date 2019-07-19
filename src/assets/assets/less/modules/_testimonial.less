@@ -1,0 +1,189 @@
+/*---------- 2.25 Testimonial ----------*/
+
+.testimonial-wrap{
+	padding: 120px 20px;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	color: #fff;
+	&:before{
+		content: '';
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		//Twitter Bootstrap's mixin  defined on mixin.less
+		#gradient.vertical(@start-color : fade(@primary-900, 80%); @end-color : #000; @start-percent : 0%; @end-percent : 100%);
+		opacity: .8;
+	}
+}
+.testimonial{
+	text-align: center;
+	z-index: 99;
+	& > [class^="col-"]{
+		margin-bottom: 30px;
+	}
+	.avatar{
+		@height: 120px;
+		height: @height;
+		width: @height;
+		border-radius: @height;
+		margin-bottom: 30px;
+	}
+	.name{
+		font-weight: bold;
+		font-size: 1.4em;
+		margin-bottom: 5px;
+	}
+	.rating{
+		margin-top: 10px;
+		margin-bottom: 30px;
+	}
+	p{
+		font-size: 1.2em;
+		margin: 15px 0;
+	}
+	&.dark{
+		padding: 30px 60px;
+		color: #fff;
+		border: 5px solid transparent;
+		outline: 1px solid fade(@primary-900, 20%);
+		&:before{
+			content: '';
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			/*Twitter Bootstrap's mixin  defined on mixin.less*/
+			#gradient.vertical(@start-color : @primary-700; @end-color : #000; @start-percent : 0%; @end-percent : 100%);
+		}
+	}
+}
+
+
+
+.testimonial{
+	.owl-nav [class*='owl-']{
+		background: @primary-color;
+		&:hover{
+			background: @base-color;
+		}
+	}
+	&.boxed{
+		[class^='col-'] > div, .owl-item{
+			border: 1px solid @gray-50;
+			padding: 30px;
+			background: #fff;
+		}
+	}
+	.owl-controls{
+		position: relative;
+		z-index: 9;
+	}
+
+	.owl-nav {
+		margin-top: 10px;
+		text-align: center;
+		[class*='owl-'] {
+			color: #fff;
+			font-size: 14px;
+			margin: 5px;
+			padding: 4px 7px;
+			display: inline-block;
+			cursor: pointer;
+			border-radius: 3px;
+			&:hover {
+				background: #869791;
+				color: white;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.owl-nav .disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
+	.owl-nav.disabled + .owl-dots {
+		margin-top: 10px;
+	}
+
+	.owl-dots {
+		text-align: center;
+		-webkit-tap-highlight-color: transparent;
+		.owl-dot {
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+			span {
+				width: 10px;
+				height: 10px;
+				margin: 5px 7px;
+				background: @primary-color;
+				display: block;
+				-webkit-backface-visibility: visible;
+				.transition(opacity 200ms ease);
+				-webkit-border-radius: 30px;
+				-moz-border-radius: 30px;
+				border-radius: 30px;
+			}
+			&.active span, &:hover span {
+				background: @primary-contrast;
+			}
+		}
+	}
+}
+
+.testimonial-option{
+	@size: 70px;
+	margin-bottom: 30px;
+	.tes-text{
+		background: #fff;
+		padding: 10%;
+		margin-bottom: 15px;
+		font-size: 1.2em;
+		line-height: 1.6em;
+		position: relative;
+		&:after{
+			content: '';
+			height: 0;
+			width: 0;
+			border-bottom: @size solid transparent;
+			border-top: @size solid @gray-50;
+			border-left: @size solid transparent;
+			position: absolute;
+			bottom: -@size*2;
+			left: -1px;
+		}
+	}
+	.tes-profile{
+		margin-left: @size + 15px;
+		@height: 60px;
+		.avatar{
+			height: @height;
+			width: @height;
+			.border-radius(@height);
+			float: left;
+		}
+		.tes-profile-text{
+			margin-left: @height + 10px;
+			margin-top: 5px;
+			.name{
+				font-weight: bold;
+			}
+			.location{
+				font-size: .8em;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+

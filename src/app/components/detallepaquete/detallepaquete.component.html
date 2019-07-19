@@ -1,0 +1,534 @@
+<div class="wrapper wrapper-full-page">
+    <div class="full-page lock-page">
+        <div class="content" style="background-color: white; padding-top:50px">
+            <div class="container">
+                <div class="row">
+                    <div class="card card-raised">
+                        <div class="card-content">
+                           <!--<div class="col-md-6 col-sm-12 col-lg-8">
+                                <owl-carousel [options]="customOptions2" [items]="slides" [carouselClasses]="['owl-theme', 'sliding']" >
+                                        <div class="item" *ngFor="let image of slides;let i = index">
+                                         <div>
+                                           <img src={{image.img}}/>
+                                         </div>
+                                        </div>
+                                       </owl-carousel>
+                           </div>-->
+                          
+                           <div class="col-md-6 col-md-12 col-lg-8">
+                                <ngx-carousel class="banner" [inputs]="carouselBanner">
+                                        <ngx-item NgxCarouselItem *ngFor="let image of slides; let i = index;">
+                                            <div class="bannerStyle" [style.background]="'url(' + image.img + ')'">
+                                                <h1 style="color: transparent">{{i}}</h1>
+                                            </div>
+                                        </ngx-item>
+                                        <button NgxCarouselPrev class="leftRs">&lt;</button>
+                                        <button NgxCarouselNext class="rightRs">&gt;</button>
+                                    </ngx-carousel>
+                           </div>
+
+                           <!--<div class="col-md-6 col-md-12 col-lg-8">
+                                <section class="black">
+                                        <div class="carousel carousel-slider" data-indicators="true">
+                                          <div *ngFor="let image of slides; let i = index;">
+                                                <div class="carousel-item red lighten-2 white-text" href="#i" [style.background]="'url(' + image.img + ')'">
+                                                        <div class="container" >
+                                                           
+                                                        </div>  
+                                                </div>
+                                          </div>
+                                        </div>
+                                      </section>
+                           </div>-->
+                           
+                        
+
+                          
+                            <!--<div class="col-md-6 col-sm-12 col-lg-8" style="border-radius: 10px; padding-top: 25px">
+                                <div class="horizontal-container" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxFlex="auto">
+                                    <div class="vertical-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="100%">
+                                        <div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
+                                            <swiper *ngIf="type == 'component' && show" class="swiper-container" fxFlex="auto" [config]="config" [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+                                                
+                                                <div *ngFor="let slide of slides" class="swiper-slide">
+                                                    <img src="{{ slide.img }}" alt="" style="width: 100%;
+                                                    height: 100%;
+                                                    background-color: #eee;
+                                                    background-size: cover;
+                                                    background-position: center;
+                                                    position: absolute;
+                                                    left: 0;
+                                                    top: 0;">
+                                                </div>
+                                            </swiper>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <!--<div class="col-md-6 col-sm-12 col-lg-8" style="border-radius: 10px; padding-top: 25px">
+                                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)" (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+                                    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                                        <img src="{{ slide.img }}" alt="" width="100%">
+                                    </div>
+                                </ngx-slick-carousel>
+                            </div>-->
+                            <div class="col-md-6 col-sm-12 col-lg-4" style="margin-top: -25px">
+                                <div class="card blue-grey.lighten-4" style="margin-bottom: 0px">
+                                    <!--<div class="card-header card-header-icon" data-background-color="blue">
+                                        <img class="avatar" src="../assets/assets/img/camp.png" alt="...">
+                                    </div>-->
+                                    <form [formGroup]="form1" (submit)="submitconsulta()">
+                                        <div class="card-content" style="margin-bottom: -20px">
+                                            <h2 class="card-title" style="font-weight:bold;">{{paquete.Nombre}} Tour</h2>
+                                            <p class="card-title" style="font-weight:bold; color: #007d9e;    margin-bottom: -20px">Costo Máximo USD {{paquete.Costo}}</p>
+                                            <hr>
+                                            <p class="card-title" style="font-weight:bold;margin-bottom: -20px">Buscar fecha y grupo</p>
+                                            <div class="row">
+                                                <div class="card-content">
+                                                        <div class="col-md-6 col-sm-12 col-lg-6" style="padding-top: 4px">
+                                                                <div class="input-group ">
+                                                                    <span class="input-group-addon ">
+                                                                                <i class="material-icons" style="color: #007d9e">control_point</i>
+                                                                    </span>
+                                                                    <div [ngClass]="{'has-error':(form1.controls.pasajeros.errors && form1.controls.pasajeros.dirty),
+                                                                    'has-success':!form1.controls.pasajeros.errors}" class="form-group">
+                                                                                <mat-form-field>
+                                                                                        <input matInput type="number" formControlName="pasajeros" name="pasajeros" [(ngModel)]="pasajeros" (ngModelChange)="estadocreargrupo(pasajeros)" min="1" placeholder="Pasajeros">
+                                                                                </mat-form-field>
+                                                                                    
+                                                                    </div>
+                                                                    <!--<div [ngClass]="{'has-error':(form1.controls.pasajeros.errors && form1.controls.pasajeros.dirty),
+                                                                             'has-success':!form1.controls.pasajeros.errors}" class="form-group" style="padding-top: 0px">
+                                                                        <label class="control-label">Pasajeros
+                                                                                    <small>(campo obligatorio)</small>
+                                                                                </label>
+                                                                        <input name="pasajeros"  style="margin-top: 7px" [(ngModel)]="pasajeros" (ngModelChange)="estadocreargrupo(pasajeros)" for="pasajeros" formControlName="pasajeros" type="number" class="form-control" min="1">
+                                                                    </div>-->
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon ">
+                                                                                        <i class="material-icons" style="color: #007d9e">date_range</i>
+                                                                        </span>
+                                                                    <div [ngClass]="{'has-error':(form1.controls.fecha.errors && form1.controls.fecha.dirty),
+                                                                                'has-success':!form1.controls.fecha.errors}" class="form-group">
+                                                                        <!--<label class="control-label">Fecha</label>-->
+                                                                        <mat-form-field class="example-full-width" (click)="picker.open()">
+                                                                            <input style="padding-bottom:5px" matInput for="fecha" name="fecha" placeholder="Fecha" formControlName="fecha" [matDatepicker]="picker">
+                                                                            <mat-datepicker #picker></mat-datepicker>
+                                                                        </mat-form-field>
+                                                                    </div>
+                                                                    <!--<div class="form-group">
+                                                                                        <mat-input-container>
+                                                                                            <input matInput [matDatepicker]="resultPicker" placeholder="seleccionar el día">
+                                                                                        </mat-input-container>
+                                                                                        <mat-datepicker #resultPicker [touchUi]="touch" [startView]="'month'">
+                                                                                        </mat-datepicker>
+                                                                                        <mat-datepicker-toggle matSuffix [for]="resultPicker">
+                                                                                        </mat-datepicker-toggle>
+                                                                                    </div>-->
+                                                                </div>
+                                                            </div>
+
+                                                </div>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="card-footer" style="padding-bottom: -20px">
+                                            <button [disabled]="!form1.valid" type="submit" class="btn btn-primary btn-block green">Buscar</button>
+                                            <button [disabled]="!form1.valid" *ngIf="boolcreargrupo" (click)="openTipoGrupo()" class="btn btn-primary right btn-block green">Crear Grupo</button>
+                                        </div>
+                                    </form>
+                                   
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-12 cols-sm-12 gol-lg-12">
+                                    <ngx-carousel [inputs]="carouselTileTwo">
+                                            <ngx-tile NgxCarouselItem *ngFor="let grupo of grupos; let i = index;" >
+                                                        <div class="card blue-grey.lighten-4"  style="box-shadow:none">
+                                                                <div class="card-content" style="margin-top: -25px">
+                                                                    <h4 class="category" style="font-size:16px;font-weight:bold">{{grupo.Nombre}}</h4>
+                                                                    <p class="card-title" style="font-size:12px;color: #007d9e" >USD {{porfactpago1(grupo)}} <s>{{paquete.Costo}}</s></p>
+                                                                    <owl-carousel-o [options]="customOptions2" style="margin: auto;width: 50%">
+                                                                        <div *ngFor="let flat of grupo.Integrantes">
+                                                                            <ng-template carouselSlide>
+                                                                                <div class="icon icon-locate">
+                                                                                    <!--<i class="material-icons">home</i>-->
+                                                                                    <img class="avatar" style="width: 32px;height: 32px;display: inline" src="https://www.countryflags.io/{{flat.Nacionalidad}}/flat/32.png">
+                                                                                    <img class="avatar" *ngIf="flat.Sexo==1" style="width: 32px;height: 32px;display: inline;padding-bottom: 2px" src="../../../assets/femaleicon.svg">
+                                                                                    <img class="avatar" *ngIf="flat.Sexo==0" style="width: 32px;height: 32px;display: inline;padding-bottom: 2px" src="../../../assets/maleicon.svg">
+                                                                                    <a style="display: inline;font-size: 15px">{{flat.Edad}}</a>
+                                                                                </div>
+                                                                            </ng-template>
+                                                                        </div>
+                                                                    </owl-carousel-o>
+                                                                    <p class="card-description" style="font-size:10px;text-align: initial">miembros {{grupo.Integrantes.length}} de {{grupo.MaxIntegrantes}}</p>
+                                                                    <!--<i class="material-icons">calendar_today</i>-->
+                                                                    <p class="card-description" style="font-size:10px;margin-top: -15px;text-align: initial">
+                                                                        Limite de reserva {{grupo.FechaMargen | date: 'dd/MM/yyyy'}}
+                                                                    </p>
+                                                                    <p class="card-description" style="font-size:10px;margin-top: -15px;text-align: initial">
+                                                                        Inicio de Tour {{grupo.FechaInicioTour | date: 'dd/MM/yyyy'}}
+                                                                    </p>
+                                                                </div>
+                                                                <div class="card-footer center-align" style="margin-top: -25px">
+                                                                    <a (click)="addIntegrantes(grupo)" class="btn  orange" style="font-size:10px;margin-top: -10px;margin-bottom: -30px">Reservar</a>
+                                                                </div>
+                                                        </div>
+                                                
+                                            </ngx-tile>
+                                            <button NgxCarouselPrev class="leftRs">&lt;</button>
+                                            <button NgxCarouselNext class="rightRs">&gt;</button>
+                                        </ngx-carousel>
+                            </div>
+                            <!--<div class="col-md-12 col-sm-12 col-lg-12">
+                                <div>
+                                    <owl-carousel-o [options]="customOptions1">
+                                        <div *ngFor="let grupo of grupos">
+                                            <ng-template carouselSlide>
+                                                <div class="card card-pricing card-raised">
+                                                    <div class="card-content">
+                                                        <h4 class="category" style="font-size:12px;font-weight:bold">{{grupo.Nombre}}</h4>
+                                                        <h6 class="card-title" style="font-size:10px;margin-top: 2px;color: #007d9e">USD {{grupo.TotalPago}} <s>{{paquete.Costo}}</s></h6>
+                                                        <owl-carousel-o [options]="customOptions2" style="margin: auto;width: 50%">
+                                                            <div *ngFor="let flat of grupo.Integrantes">
+                                                                <ng-template carouselSlide>
+                                                                    <div class="icon icon-rose">
+                                                                        
+                                                                        <img class="avatar" style="width: 16px;height: 16px;display: inline-block" src="https://www.countryflags.io/{{flat.Nacionalidad}}/flat/16.png">
+                                                                        
+                                                                    </div>
+                                                                </ng-template>
+                                                            </div>
+                                                        </owl-carousel-o>
+                                                        <p class="card-description" style="font-size:10px">miembros {{grupo.Integrantes.length}} de {{grupo.MaxIntegrantes}}</p>
+                                                        
+                                                        <p class="card-description" style="font-size:10px;margin-top: -15px">
+                                                            Limite de reserva {{grupo.FechaMargen | date: 'dd/MM/yyyy'}}
+                                                        </p>
+                                                        <p class="card-description" style="font-size:10px;margin-top: -15px">
+                                                            Inicio de Tour {{grupo.FechaInicioTour | date: 'dd/MM/yyyy'}}
+                                                        </p>
+                                                        <a (click)="addIntegrantes(grupo)" class="btn btn-behance btn-round orange" style="font-size:10px;margin-top: -10px">Reservar</a>
+                                                    </div>
+                                                </div>
+
+                                            </ng-template>
+                                        </div>
+                                    </owl-carousel-o>
+                                </div>
+                            </div>-->
+                            <!--<div class="col-md-12">
+                                <div class="horizontal-container" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxFlex="auto">
+                                    
+
+                                    <div class="vertical-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="20%">
+                                        
+
+                                        <div class="content-container1" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
+                                            <swiper *ngIf="type == 'component' && show" class="swiper-container" fxFlex="auto" [config]="config1" [disabled]="disabled" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+                                                <div *ngFor="let grupo of grupos">
+                                                    <div class="card card-pricing card-raised" style="margin-top: 0px;margin-bottom: 0px">
+                                                        <div class="card-content" style="margin-right: 10px">
+                                                            <h4 class="category" style="font-size:12px;font-weight:bold">{{grupo.Nombre}}</h4>
+                                                            <h6 class="card-title" style="font-size:10px;margin-top: 2px;color: #007d9e">USD {{grupo.TotalPago}} <s>{{paquete.Costo}}</s></h6>
+                                                            <owl-carousel-o [options]="customOptions2" style="margin: auto;width: 50%">
+                                                                <div *ngFor="let flat of grupo.Integrantes">
+                                                                    <ng-template carouselSlide>
+                                                                        <div class="icon icon-rose">
+                                                                            
+                                                                            <img class="avatar" style="width: 16px;height: 16px;display: inline-block" src="https://www.countryflags.io/{{flat.Nacionalidad}}/flat/16.png">
+                                                                            
+                                                                        </div>
+                                                                    </ng-template>
+                                                                </div>
+                                                            </owl-carousel-o>
+                                                            <p class="card-description" style="font-size:10px">miembros {{grupo.Integrantes.length}} de {{grupo.MaxIntegrantes}}</p>
+                                                            <p class="card-description" style="font-size:10px;margin-top: -15px">
+                                                                Limite de reserva {{grupo.FechaMargen | date: 'dd/MM/yyyy'}}
+                                                            </p>
+                                                            <p class="card-description" style="font-size:10px;margin-top: -15px">
+                                                                Inicio de Tour {{grupo.FechaInicioTour | date: 'dd/MM/yyyy'}}
+                                                            </p>
+                                                            <a (click)="addIntegrantes(grupo)" class="btn btn-behance btn-round" style="font-size:10px;margin-top: -10px">Reservar</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </swiper>
+
+                                            <div *ngIf="type == 'directive' && show" class="swiper-container" [disabled]="disabled" [swiper]="config" (indexChange)="onIndexChange($event)" (swiperTransitionStart)="onSwiperEvent('transitionStart')" (swiperTransitionEnd)="onSwiperEvent('transitionEnd')">
+                                                <div class="swiper-wrapper">
+                                                    <div *ngFor="let slide of slides" class="swiper-slide">
+                                                        <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+                                                            {{slide}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="swiper-scrollbar" [hidden]="config.scrollbar === false"></div>
+                                                <div class="swiper-pagination" [hidden]="config.pagination === false"></div>
+
+                                                <div class="swiper-button-prev" [hidden]="config.navigation === false"></div>
+                                                <div class="swiper-button-next" [hidden]="config.navigation === false"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>-->
+
+                            <div class="col-md-3">
+                                <div class="card blue-grey.lighten-4">
+                                            <div class="card-content">
+                                                <div class="card-header">
+                                                        <label class="card-title" style="font-weight:bold;">Recorrido de {{paquete.Nombre}}</label>
+                                                </div>
+                                                            <!--<legend>Ubicaciones del tour</legend>-->
+                                                            <div class="card-footer" style="padding-bottom: -20px">
+                                                                    <div *ngFor="let loc of paquete.Ubicacion">
+                                                                            <a style="color: blue; font-size: 12px">{{loc.text }} </a> <br>
+                                                                    </div>
+                                                            </div>
+                                            </div>
+                                </div>
+                                <div class="card blue-grey.lighten-4">
+                                    <div class="card-content">
+                                            <div class="card-header">
+                                                    <label class="card-title" style="font-weight:bold;">Tours relacionados en {{paquete.Ubicacion[0].text}}</label>
+                                            </div>
+                                            <div class="card-footer">
+                                                    <div class="row">
+                                                            <div *ngFor="let tipo of tipostour">
+                                                                <div class="col-md-12">
+                                                                    <ul class="nav nav-pills nav-pills-success nav-stacked">
+                                                                        <li [ngClass]="{active: step=== tipo._id}" (click)="step = tipo._id; gotodetalle(tipo._id)" style="margin-top: -25px">
+                                                                            <a href="" data-toggle="tab" matTooltip="{{tipo.Descripcion}}">{{tipo.Tipo}}</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-9 col-lg-9 col-sm12">
+                                <div class="card">
+                                    <!--<div class="card-header">
+                                        <h4 class="card-title">{{paquete.Nombre}}</h4>
+                                    </div>-->
+                                    <div class="card-content">
+                                        <div class="row">
+
+                                            <div class="col-sm-12 col-lg-12 col-md-12">
+                                                    <div [froalaView]="paquete.Descripcion"></div>
+                                            </div>
+                                             
+                                                
+                                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading" role="tab" id="headingOne">
+                                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                                <h4 class="panel-title">
+                                                                    Recomendaciones
+                                                                    <i class="material-icons">keyboard_arrow_down</i>
+                                                                </h4>
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                                            <div class="panel-body">
+                                                                    <div [froalaView]="recomendacionObj.Descripcion"></div> 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                                <h4 class="panel-title">
+                                                                    Itinerario
+                                                                    <i class="material-icons">keyboard_arrow_down</i>
+                                                                </h4>
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                            <div class="panel-body">
+                                                                    <ul class="timeline">
+                                                                            <li class="timeline-inverted">
+                                                                                <div class="timeline-badge danger">
+                                                                                    <i class="material-icons">card_travel</i>
+                                                                                </div>
+                                                                                <div class="timeline-panel">
+                                                                                    <div class="timeline-heading">
+                                                                                        <span class="label label-danger">Some Title</span>
+                                                                                    </div>
+                                                                                    <div class="timeline-body">
+                                                                                        <p>Wifey made the best Father's Day meal ever. So thankful so happy so blessed. Thank you for making my family We just had fun with the “future” theme !!! It was a fun night all together ... The always rude Kanye Show at 2am Sold Out Famous viewing @ Figueroa and 12th in downtown.</p>
+                                                                                    </div>
+                                                                                    <h6>
+                                                                                        <i class="ti-time"></i> 11 hours ago via Twitter
+                                                                                    </h6>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="timeline-badge success">
+                                                                                    <i class="material-icons">extension</i>
+                                                                                </div>
+                                                                                <div class="timeline-panel">
+                                                                                    <div class="timeline-heading">
+                                                                                        <span class="label label-success">Another One</span>
+                                                                                    </div>
+                                                                                    <div class="timeline-body">
+                                                                                        <p>Thank God for the support of my wife and real friends. I also wanted to point out that it’s the first album to go number 1 off of streaming!!! I love you Ellen and also my number one design rule of anything I do from shoes to music to homes is that Kim has to like it....</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li class="timeline-inverted">
+                                                                                <div class="timeline-badge info">
+                                                                                    <i class="material-icons">fingerprint</i>
+                                                                                </div>
+                                                                                <div class="timeline-panel">
+                                                                                    <div class="timeline-heading">
+                                                                                        <span class="label label-info">Another Title</span>
+                                                                                    </div>
+                                                                                    <div class="timeline-body">
+                                                                                        <p>Called I Miss the Old Kanye That’s all it was Kanye And I love you like Kanye loves Kanye Famous viewing @ Figueroa and 12th in downtown LA 11:10PM</p>
+                                                                                        <p>What if Kanye made a song about Kanye Royère doesn't make a Polar bear bed but the Polar bear couch is my favorite piece of furniture we own It wasn’t any Kanyes Set on his goals Kanye</p>
+                                                                                        <hr>
+                                                                                        <div class="dropdown pull-left">
+                                                                                            <button type="button" class="btn btn-round btn-info dropdown-toggle" data-toggle="dropdown">
+                                                                                                <i class="material-icons">build</i>
+                                                                                                <span class="caret"></span>
+                                                                                            </button>
+                                                                                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                                                                                <li>
+                                                                                                    <a href="#action">Action</a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a href="#action">Another action</a>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <a href="#here">Something else here</a>
+                                                                                                </li>
+                                                                                                <li class="divider"></li>
+                                                                                                <li>
+                                                                                                    <a href="#link">Separated link</a>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li>
+                                                                                <div class="timeline-badge warning">
+                                                                                    <i class="material-icons">flight_land</i>
+                                                                                </div>
+                                                                                <div class="timeline-panel">
+                                                                                    <div class="timeline-heading">
+                                                                                        <span class="label label-warning">Another One</span>
+                                                                                    </div>
+                                                                                    <div class="timeline-body">
+                                                                                        <p>Tune into Big Boy's 92.3 I'm about to play the first single from Cruel Winter Tune into Big Boy's 92.3 I'm about to play the first single from Cruel Winter also to Kim’s hair and makeup Lorraine jewelry and the whole style squad at Balmain and the Yeezy team. Thank you Anna for the invite thank you to the whole Vogue team</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading" role="tab" id="headingThree">
+                                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                                <h4 class="panel-title">
+                                                                    inclusiones
+                                                                    <i class="material-icons">keyboard_arrow_down</i>
+                                                                </h4>
+                                                            </a>
+                                                        </div>
+                                                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                            <div class="panel-body">
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel panel-default">
+                                                            <div class="panel-heading" role="tab" id="headingThree">
+                                                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="false" aria-controls="collapseThree">
+                                                                    <h4 class="panel-title">
+                                                                        mapa
+                                                                        <i class="material-icons">keyboard_arrow_down</i>
+                                                                    </h4>
+                                                                </a>
+                                                            </div>
+                                                            <div id="collapsefour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapsefour">
+                                                                <div class="panel-body">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--<div class="col-md-4">
+                        <div class="feature-box">
+                            <div class="text-center">
+                                <div class="circle-icon"><span class="icon-locate"></span>
+                                </div>
+                                <div class="contact-desc" style="margin-top: -2.3%">
+                                    <h4>{{paquete.Nombre}} tour</h4>
+                                    <h5>Precio Máximo USD {{paquete.Costo}}</h5>
+                                </div>
+                            </div>
+                            <hr>
+                            <form class="example-form">
+                                <div id="form-messages" class="alert" role="alert" style="display: none;"></div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="name">Fecha salida</label>
+                                            <input ng-model="startDate" class="form-control datepicker" placeholder="Fecha salida" id="datepicker1">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="message">Pasajeros</label>
+                                            <input type="number" ng-change="validNumberPasa(cantidadIntegrantes)" ng-model="cantidadIntegrantes" class="form-control" placeholder="Nro de personas">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button class="btn btn-search btn-primary hvr-sweep-to-right" ng-click="listarporfechas(startDate,paquete._id)" style="background-color: #558B2F;border: #558B2F; padding-bottom: 9px;padding-top: 8.1px">Buscar</button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button ng-click="abrirmodalgrupo()" ng-show="mostrarCrearGrupo" class="btn btn-primary btn-sm hvr-sweep-to-right" style="background-color: #558B2F;border: #558B2F; padding-bottom: 9px;padding-top: 8.1px" data-toggle="modal" data-target="#GrupoModal">Crear Grupo</button>
+                                        
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>-->
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

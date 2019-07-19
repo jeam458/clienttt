@@ -1,0 +1,52 @@
+.ui-datepicker .ui-datepicker-header{
+	background: fade(@primary-color, 10%);
+	color: @font-color;
+	padding: 2px 0;
+	.ui-state-hover{
+		background: fade(@primary-color, 20%);
+	}
+}
+
+.ui-dialog{
+	border: 1px solid @gray-100;
+	.ui-widget-header{
+		background: none;
+	}
+	.ui-dialog-buttonset{
+		button, input[type="button"], input[type="submit"]{
+			background: @primary-color;
+			border: 1px solid @primary-color;
+			color: #fff;
+			@height: 30px;
+			height: @height;
+			line-height: @height;
+			padding: 0 15px;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+	}
+}
+.price-widget{
+	&:after{
+		content: '';
+		clear: both;
+		display: block;
+	}
+}
+
+
+.ui-tabs{
+	.ui-tabs-nav{
+		li{
+			a{
+				border-radius: 0px;
+				font-size: 1.1em;
+			}
+			&.ui-state-hover{
+				a{
+					color: #fff;
+				}
+			}
+		} 
+	}
+}

@@ -1,0 +1,64 @@
+/*---------- 3.5 Login and Signup ----------*/
+
+.login{
+  min-height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  &:before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    //twitter bootstrap mixin
+    #gradient.horizontal(@start-color : #000; @end-color : @primary-900; @start-percent : 0%; @end-percent : 100%);
+    opacity: .8;
+  }
+  .form-box{
+    @border-radius: 10px;
+    @padding: 50px;
+    max-width: 450px;
+    position: relative;
+    margin: 0 auto;
+    padding:20px;
+    top: 25%;
+
+    .form-head{
+      padding: 40px 15px;
+      border-bottom: 2px solid @primary-600;
+      background: @base-color;
+      color: #fff;
+      text-align: center;
+      .txt{
+        margin-top: 10px;
+        padding: 0 @padding;
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: 1em;
+        color:@base-contrast;
+      }
+
+      hr{
+       display: table;
+       width: 80px;
+       margin: 20px auto 5px;
+       border-color: fade(@base-contrast, 20%);
+     }
+
+
+   } 
+   .form-body{
+    padding: 20px @padding;
+    background: lighten(@gray-50, 5%);
+  }
+}
+}
+@media(max-width: @screen-sm){
+  .login{
+    background-attachment: fixed;
+  }
+}

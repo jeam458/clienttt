@@ -1,0 +1,45 @@
+/*---------- 2.0 Modules ----------*/
+
+/*---------- 2.1 Preloadomg ----------*/
+
+.pre-loader{
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 99999;
+  @height: 50px;
+  .loading-img{
+    /*circular loading*/
+    @border-width: 4px;
+    border-top: @border-width  solid rgba(255, 255, 255, 0.2);
+    border-right: @border-width  solid rgba(255, 255, 255, 0.2);
+    border-bottom: @border-width solid rgba(255, 255, 255, 0.2);
+    border-left: @border-width  solid #ffffff;
+    //mixin defied on mixins/_mixins.less
+    .border-radius(50%);
+    height: @height;
+    width: @height;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -@height/2;
+    margin-left: -@height/2;
+
+    text-align: center;
+    //mixin defied on mixins/_mixins.less
+    .animation (loading, 2s, infinite, linear);
+  }
+
+  .keyframes(loading, {
+    0% {
+     .rotate(0deg);
+   }
+   100% {
+    .rotate(360deg);
+  }
+  });
+  
+}
