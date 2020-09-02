@@ -56,7 +56,7 @@
         "flickity": "^2.2.0",
         "fullcalendar": "3.4.0",
         "getstream": "^3.12.3",
-        "googleapis": "19.0.0",
+        "googleapis": "39.1.0",
         "hammerjs": "^2.0.8",
         "jasny-bootstrap": "3.1.3",
         "jquery": "1.12.4",
